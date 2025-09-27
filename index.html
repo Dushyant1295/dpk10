@@ -4,17 +4,67 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dpk</title>
+    <title>Life Timer - Dpk</title>
     <link rel="icon" type="image/png" sizes="64x64" href="img/fav.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   
     <link rel="stylesheet" href="dist/style.css" />
 </head>
 
 <body>
     <script type="module" crossorigin src="http://localhost:3000/main.js"></script>
     <main>
-        <div data-scroll-container class="bg-black">
+        <div data-scroll-container class="countdown-body">
+            <!-- Today's Date -->
+            <div class="current-date" id="currentDate"></div>
+            
             <section class="vh-100">
-                
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <!-- Header -->
+                            <header class="countdown-header">
+                                <h1>Life Timer</h1>
+                                <p>Countdown to December 2035</p>
+                            </header>
+
+                            <!-- Main Content -->
+                            <div class="countdown-main-wrapper">
+                                <!-- Countdown Section -->
+                                <div class="glass-card">
+                                    <h2 class="countdown-title">Time Remaining Until December 31, 2035</h2>
+                                    
+                                    <div class="countdown-grid">
+                                        <div class="countdown-item">
+                                            <span class="countdown-number" id="days">0</span>
+                                            <span class="countdown-label">Days</span>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span class="countdown-number" id="hours">0</span>
+                                            <span class="countdown-label">Hours</span>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span class="countdown-number" id="minutes">0</span>
+                                            <span class="countdown-label">Minutes</span>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span class="countdown-number" id="seconds">0</span>
+                                            <span class="countdown-label">Seconds</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="total-hours">
+                                        <div class="total-hours-number" id="totalHours">0</div>
+                                        <div class="total-hours-label">Total Hours Remaining</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
