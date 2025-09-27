@@ -1,5 +1,8 @@
 import "../css/dpk.scss";
 
+import gsap from "gsap";
+
+
 // Simple Timer Configuration
 const targetDate = new Date('2035-12-31T23:59:59.999');
 
