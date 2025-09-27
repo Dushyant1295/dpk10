@@ -1,0 +1,94 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Appear On Scroll  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.appear {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  &.is-inview {
+    opacity: 1;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Appear from bottom  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.appear-y {
+  opacity: 0;
+  transform-origin: 50% 50%;
+  will-change: opacity, transform;
+  transform: translate(0px, 50px);
+  transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  &.is-inview {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               img Scale grow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.img {
+  opacity: 0;
+  transform: scale(0.5);
+  &.is-inview {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 1s ease;
+    will-change: transform;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               img scale in
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.img-detect {
+  overflow: hidden;
+  img {
+    transform: scale(1.5, 1.5);
+    transition: transform 3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-delay: 0.1s;
+  }
+  &.is-inview img {
+    transform: scale(1, 1);
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               For Title <h1..h6> tag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.appear-title {
+  div:first-child span {
+    transition-delay: 0.15s;
+  }
+  div:nth-child(2) span {
+    transition-delay: 0.35s;
+  }
+  div:nth-child(3) span {
+    transition-delay: 0.5s;
+  }
+  div:nth-child(4) span {
+    transition-delay: 0.65s;
+  }
+  div:nth-child(5) span {
+    transition-delay: 0.8s;
+  }
+
+  div {
+    overflow: hidden;
+    line-height: 1.5;
+  }
+  span {
+    display: block;
+    transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-delay: 0.2s;
+    transform: translate3d(0, 120%, 0);
+  }
+  &.is-inview span {
+    transform: translate3d(0, 0, 0);
+  }
+}
+

@@ -1,0 +1,172 @@
+@import "../media.scss";
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Text Scramble
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+[data-dpk-call="textScr"] {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 10vw;
+  display: inline-flex;
+  text-align: center;
+  padding: 0;
+  line-height: 0.8;
+  overflow: hidden;
+  border: 1px solid burlywood;
+
+  span {
+    visibility: hidden;
+    display: inline-block;
+    position: relative;
+    letter-spacing: -0.3vw;
+
+    &::before {
+      content: attr(data-char);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-103%);
+    }
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Text Appear Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[data-dpk-call="appearY"] {
+  font-size: 3rem;
+
+  div {
+    overflow: hidden;
+    line-height: 1;
+
+    span {
+      display: block;
+      visibility: hidden;
+    }
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Growing Texts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[data-dpk-call="growB"] {
+  font-size: 3rem;
+
+  span {
+    will-change: transform;
+    display: inline-block;
+    transform: rotateX(-90deg) translateY(3rem) translateX(-3rem);
+    transform-origin: center bottom;
+    color: #fff;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Text Scramble
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  position: relative;
+}
+
+.content:last-child {
+  // padding-bottom: 40vh;
+}
+
+.content__title {
+  font-size: 8vw;
+  line-height: 0.8;
+  text-align: center;
+  display: grid;
+  gap: 2rem;
+}
+
+.dtext2 .char,
+.dtext3 .char {
+  opacity: 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              Appear Title Via JS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$transition-delay-step: 0.2s;
+
+h1,
+h2,
+h3,
+h4 {
+  &.splitting {
+    .lines {
+      overflow: hidden;
+
+      .words {
+        display: block;
+        transition: 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 105%, 0);
+      }
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) .words {
+          transition-delay: ($transition-delay-step * ($i - 1));
+        }
+      }
+    }
+  }
+}
+
+.entered {
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    &.splitting {
+      .lines .words {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          Paragraph Reveal Animation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[data-dpk-call="paraR"] {
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > p,
+  & > .btn-1 {
+      // opacity: 0;
+      visibility: hidden;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Image Reveal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.reveal {
+  visibility: hidden;
+  position: relative;
+   
+  z-index: 2;
+  overflow: hidden;
+  img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transform-origin: top;
+  }
+}

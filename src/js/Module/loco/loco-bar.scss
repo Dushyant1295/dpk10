@@ -1,0 +1,103 @@
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           Horizontal Indicator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+.dpk-bar-h {
+    z-index: 10;
+    position: absolute;
+    top: 95%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    width: 1%;
+    color: #fff;
+    mix-blend-mode: difference;
+
+    .bar-holder {
+        display: block;
+        position: relative;
+        width: 180px;
+        height: 1px;
+        overflow: hidden;
+        &:before {
+            content: "";
+            left: 0;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .h-bar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: block;
+            left: -100%;
+        }
+    }
+}
+
+
+// Hide Default Horizontal Scrollbar
+
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+    display: none !important;
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Vertical Indicator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+
+
+.dpk-bar-v {
+    z-index: 9999999;
+    position: fixed;
+    top:50%;
+    left:2%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    mix-blend-mode: difference;
+
+    .bar-holder {
+        display: block;
+        position: relative;
+        width: 1px;
+        height: 180px;
+        overflow: hidden;
+        
+        &:before {
+            content: "";
+            left: 0;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .v-bar{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: block;
+            top: -100%;
+            
+        }
+    }
+}

@@ -1,0 +1,32 @@
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              Image Trails Effects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  .title {
+    mix-blend-mode: color-burn;
+    background: transparent;
+    z-index: 99999999;
+    position: relative;
+    overflow: hidden;
+    line-height: 1;
+  }
+  .content {
+    z-index: 9;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    isolation: isolate;
+    overflow: hidden;
+  
+    .content__img {
+      max-width: 250px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      will-change: transform;
+    }
+  }

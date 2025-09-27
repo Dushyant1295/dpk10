@@ -1,1 +1,0 @@
-<script type="module" crossorigin src="http://localhost:3000/main.js"></script>

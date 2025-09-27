@@ -1,0 +1,61 @@
+$accordian-padding: 2rem;
+
+.accordion {
+  list-style-type: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.359);
+
+  &>li {
+    position: relative;
+  }
+
+  .accordian-title {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.359);
+    cursor: pointer;
+    padding: $accordian-padding 0;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+    &::after {
+      content: "+";
+      position: absolute;
+      top: $accordian-padding;
+      left: auto;
+      right: 0%;
+      width: 2rem;
+      transition: all 0.3s ease;
+      opacity: 0.2;
+      font-size: 3rem;
+      line-height: 1;
+      color: white;
+    }
+  }
+
+  li:nth-child(1) .accordian-title {
+    // border-top: none;
+    margin-top: 0;
+  }
+
+
+  .accordion-content {
+    overflow: hidden;
+    height: 0;
+    width: 95%;
+    p {
+      padding-bottom: 2rem;
+    }
+  }
+
+  // if you want to select one item add selected class in li
+
+  li.selected {
+    .accordion-content {
+      height: auto;
+    }
+    .accordian-title::after {
+      opacity: 1;
+      transform: rotate(-45deg);
+      transition: transform 0.2s ease;
+    }
+  }
+}

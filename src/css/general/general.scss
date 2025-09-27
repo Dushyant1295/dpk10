@@ -1,0 +1,89 @@
+:root {
+  --default: #f1f1f1;
+  --orange: #f45538;
+  --orange1: #ff6701;
+  --coal: #131212;
+
+  --primary-color: #6366f1;
+  --secondary-color: #8b5cf6;
+  --accent-color: #06b6d4;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+
+  --grid-padding: 9.5vw;
+  --section-padding: 9rem;
+
+  @include media(">=phone", "<=tablet") {
+    --grid-padding: 5vw;
+  }
+
+  @include media("<phone") {
+    --grid-padding: 4vw;
+  }
+
+  --cb-m1: cubic-bezier(0.23, 1, 0.32, 1);
+  --cb-m2: cubic-bezier(0, 0.96, 0.22, 1);
+  --cb-m3: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  --cb-m4: cubic-bezier(0.19, 1.51, 0.29, 0.99);
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none; //MM
+  font-size: 100%;
+
+  @include media("<=tablet") {
+    scroll-behavior: smooth;
+  }
+
+  @include media(">tablet") {
+    font-size: calc(100vw / 1440 * 10);
+  }
+
+  @include media(">=phone", "<=tablet") {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @include media("<phone") {
+    font-size: calc(100vw / 496 * 10);
+  }
+
+  @media (min-width: 500px) and (max-width: 766px) {
+    font-size: calc(100vw / 992 * 10);
+  }
+
+  @media (orientation: landscape) and (max-height: 450px) {
+    font-size: calc(100vw / 992 * 10);
+  }
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision; //MM
+  overscroll-behavior: none; //G8
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300;
+}
+
+::selection {
+  color: #fdfdfd;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+section,
+div {
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

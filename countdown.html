@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Timer - 10 Year Countdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Orbs */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--primary-color), transparent);
+            top: -150px;
+            left: -150px;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--secondary-color), transparent);
+            top: 50%;
+            right: -200px;
+        }
+
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, var(--accent-color), transparent);
+            bottom: -125px;
+            left: 20%;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .main-grid {
+                grid-template-columns: 2fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px var(--glass-shadow);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            text-align: center;
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .countdown-number {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Total Hours Display */
+        .total-hours {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .total-hours-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .total-hours-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Progress Section */
+        .progress-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .progress-card {
+            text-align: center;
+        }
+
+        .progress-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-circle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+        }
+
+        .progress-circle svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-circle-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 8;
+        }
+
+        .progress-circle-fill {
+            fill: none;
+            stroke: url(#progressGradient);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 565.48;
+            stroke-dashoffset: 565.48;
+        }
+
+        .progress-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .progress-details {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .progress-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .progress-stat-value {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem;
+            }
+
+            .progress-circle {
+                width: 150px;
+                height: 150px;
+            }
+
+            .progress-percentage {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+        }
+
+        /* Pulse Animation for Active Elements */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Life Timer</h1>
+            <p>Your next 10 years of active time countdown</p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="main-grid">
+            <!-- Countdown Section -->
+            <div class="glass-card countdown-container">
+                <h2 class="countdown-title">Active Time Remaining</h2>
+                
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">0</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">0</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">0</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">0</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+
+                <div class="total-hours">
+                    <div class="total-hours-number" id="totalHours">0</div>
+                    <div class="total-hours-label">Total Active Hours Remaining</div>
+                </div>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="glass-card progress-card">
+                    <h3 class="progress-title">Today's Progress</h3>
+                    
+                    <div class="progress-circle">
+                        <svg width="200" height="200">
+                            <defs>
+                                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="progress-circle-bg" cx="100" cy="100" r="90"></circle>
+                            <circle class="progress-circle-fill" cx="100" cy="100" r="90" id="progressCircle"></circle>
+                        </svg>
+                        <div class="progress-percentage" id="progressPercentage">0%</div>
+                    </div>
+
+                    <div class="progress-details">
+                        <div class="progress-stat">
+                            <span class="progress-stat-label">Active Hours Today</span>
+                            <span class="progress-stat-value" id="activeToday">0h 0m</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="progress-stat-label">Remaining Today</span>
+                            <span class="progress-stat-value" id="remainingToday">13h 0m</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="progress-stat-label">Sleep Time</span>
+                            <span class="progress-stat-value">8h 0m</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="progress-stat-label">Daily Needs</span>
+                            <span class="progress-stat-value">3h 0m</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const DOB = new Date('1994-04-10');
+        const ACTIVE_HOURS_PER_DAY = 13; // 24 - 8 (sleep) - 3 (daily needs)
+        const TEN_YEARS_MS = 10 * 365.25 * 24 * 60 * 60 * 1000;
+        
+        // Calculate current age and 10-year target
+        const now = new Date();
+        const ageMs = now - DOB;
+        const targetDate = new Date(now.getTime() + TEN_YEARS_MS);
+        
+        // DOM Elements
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        const totalHoursEl = document.getElementById('totalHours');
+        const progressPercentageEl = document.getElementById('progressPercentage');
+        const progressCircleEl = document.getElementById('progressCircle');
+        const activeTodayEl = document.getElementById('activeToday');
+        const remainingTodayEl = document.getElementById('remainingToday');
+        
+        // Animation helpers
+        let lastValues = { days: 0, hours: 0, minutes: 0, seconds: 0, totalHours: 0 };
+        
+        function animateNumber(element, from, to, duration = 1000) {
+            gsap.to({ value: from }, {
+                value: to,
+                duration: duration / 1000,
+                ease: "power2.out",
+                onUpdate: function() {
+                    element.textContent = Math.floor(this.targets()[0].value).toLocaleString();
+                }
+            });
+        }
+        
+        function animateFloat(element, from, to, duration = 1000, decimals = 1) {
+            gsap.to({ value: from }, {
+                value: to,
+                duration: duration / 1000,
+                ease: "power2.out",
+                onUpdate: function() {
+                    element.textContent = this.targets()[0].value.toFixed(decimals);
+                }
+            });
+        }
+        
+        function updateCountdown() {
+            const currentTime = new Date();
+            const timeDiff = targetDate - currentTime;
+            
+            if (timeDiff <= 0) {
+                // Timer expired
+                daysEl.textContent = '0';
+                hoursEl.textContent = '0';
+                minutesEl.textContent = '0';
+                secondsEl.textContent = '0';
+                totalHoursEl.textContent = '0';
+                return;
+            }
+            
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+            
+            // Calculate total active hours remaining
+            const totalActiveHours = Math.floor((days * ACTIVE_HOURS_PER_DAY) + (hours * ACTIVE_HOURS_PER_DAY / 24));
+            
+            // Animate changes
+            if (lastValues.days !== days) {
+                animateNumber(daysEl, lastValues.days, days, 500);
+                lastValues.days = days;
+            }
+            
+            if (lastValues.hours !== hours) {
+                animateNumber(hoursEl, lastValues.hours, hours, 500);
+                lastValues.hours = hours;
+            }
+            
+            if (lastValues.minutes !== minutes) {
+                animateNumber(minutesEl, lastValues.minutes, minutes, 500);
+                lastValues.minutes = minutes;
+            }
+            
+            if (lastValues.seconds !== seconds) {
+                animateNumber(secondsEl, lastValues.seconds, seconds, 300);
+                lastValues.seconds = seconds;
+            }
+            
+            if (lastValues.totalHours !== totalActiveHours) {
+                animateNumber(totalHoursEl, lastValues.totalHours, totalActiveHours, 800);
+                lastValues.totalHours = totalActiveHours;
+            }
+        }
+        
+        function updateDailyProgress() {
+            const now = new Date();
+            const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+            const msElapsedToday = now - startOfDay;
+            const hoursElapsedToday = msElapsedToday / (1000 * 60 * 60);
+            
+            // Calculate active hours elapsed (assuming person is active from 7 AM to 8 PM)
+            const currentHour = now.getHours();
+            let activeHoursElapsed = 0;
+            
+            if (currentHour >= 7 && currentHour < 20) {
+                // During active hours
+                activeHoursElapsed = Math.min(currentHour - 7 + (now.getMinutes() / 60), ACTIVE_HOURS_PER_DAY);
+            } else if (currentHour >= 20) {
+                // After active hours
+                activeHoursElapsed = ACTIVE_HOURS_PER_DAY;
+            }
+            
+            const progressPercentage = (activeHoursElapsed / ACTIVE_HOURS_PER_DAY) * 100;
+            const remainingActiveHours = Math.max(0, ACTIVE_HOURS_PER_DAY - activeHoursElapsed);
+            
+            // Update progress circle
+            const circumference = 2 * Math.PI * 90;
+            const offset = circumference - (progressPercentage / 100) * circumference;
+            
+            gsap.to(progressCircleEl, {
+                strokeDashoffset: offset,
+                duration: 1,
+                ease: "power2.out"
+            });
+            
+            // Update text elements
+            progressPercentageEl.textContent = `${Math.round(progressPercentage)}%`;
+            
+            const activeHours = Math.floor(activeHoursElapsed);
+            const activeMinutes = Math.floor((activeHoursElapsed - activeHours) * 60);
+            activeTodayEl.textContent = `${activeHours}h ${activeMinutes}m`;
+            
+            const remainingHours = Math.floor(remainingActiveHours);
+            const remainingMinutes = Math.floor((remainingActiveHours - remainingHours) * 60);
+            remainingTodayEl.textContent = `${remainingHours}h ${remainingMinutes}m`;
+        }
+        
+        // Initialize animations
+        function initializeAnimations() {
+            // Animate header
+            gsap.to(".header", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+            
+            // Animate cards with stagger
+            gsap.to(".glass-card", {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "power3.out",
+                delay: 0.3
+            });
+            
+            // Animate countdown items
+            gsap.to(".countdown-item", {
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.out(1.7)",
+                delay: 0.8
+            });
+            
+            // Animate background orbs
+            gsap.to(".orb-1", {
+                x: 50,
+                y: 30,
+                duration: 10,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+            
+            gsap.to(".orb-2", {
+                x: -30,
+                y: -50,
+                duration: 8,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+            
+            gsap.to(".orb-3", {
+                x: 40,
+                y: -20,
+                duration: 12,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        }
+        
+        // Start everything when page loads
+        window.addEventListener('load', () => {
+            initializeAnimations();
+            updateCountdown();
+            updateDailyProgress();
+            
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+            
+            // Update daily progress every minute
+            setInterval(updateDailyProgress, 60000);
+        });
+        
+        // Add pulse animation to seconds when they change
+        let lastSecond = -1;
+        const secondsObserver = new MutationObserver(() => {
+            const currentSecond = parseInt(secondsEl.textContent);
+            if (currentSecond !== lastSecond && lastSecond !== -1) {
+                gsap.fromTo(secondsEl, 
+                    { scale: 1 },
+                    { scale: 1.1, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }
+                );
+            }
+            lastSecond = currentSecond;
+        });
+        
+        secondsObserver.observe(secondsEl, { childList: true, subtree: true });
+    </script>
+</body>
+</html>

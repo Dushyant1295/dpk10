@@ -1,0 +1,60 @@
+@import "../media.scss";
+
+.menu-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: 100vw;
+    pointer-events: none;
+
+    &.active {
+        pointer-events: all;
+
+        .close-wrapper {
+            background-color: transparent;
+        }
+
+        .col-wrapper {
+            transform-origin: right left;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .col-wrapper {
+        height: 100vh;
+        background-color: #222;
+        transform: translate3d(101%, 0, 0);
+        transition: transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+.c-wrapper {
+    width: 100%;
+    padding: 12rem 6rem;
+    overflow-y: scroll;
+    height: 100vh;
+
+    @include media("<phone") {
+        padding: 12rem 18vw;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+    }
+}
+
+.menu-items {
+    display: inline-flex;
+    flex-direction: column;
+    width: auto;
+
+    a {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        display: inline-flex;
+        color: white;
+        font-size: 1rem;
+    }
+}

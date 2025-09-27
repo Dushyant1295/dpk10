@@ -1,0 +1,59 @@
+ /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Mezius
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@font-face {
+  font-family: Mezius;
+  src: url("./font/mazius/mazius.woff2") format("woff2"),
+    url("./font/mazius/mazius.woff") format("woff");
+  font-display: swap;
+}
+
+.mezius {
+  font-family: "Mezius", sans-serif;
+
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                  Mac
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@font-face {
+  font-family: "mac";
+  src: url("./font/mac/MAK.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "mac";
+  src: url("./font/mac/MAK-bold.woff2") format("woff2") ;
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
+}
+
+.mac {
+  font-family: "mac", sans-serif;
+}
+
+ 
+ 
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Roboto  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@font-face {
+  font-family: roboto;
+  src: url("./font/roboto/roboto-light.ttf") format("truetype-variations");
+}
+
+.roboto {
+  font-family: "roboto";
+}
+
+ 

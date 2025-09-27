@@ -1,0 +1,38 @@
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+}
+
+// ye pata ni kya hai lekin extra height le raha hai
+#curtains-canvas {
+  height: 0;
+}
+
+.plane {
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+  }
+}
+
+/*** handling errors ***/
+
+.no-curtains img {
+  opacity: 1;
+}
+
+.no-curtains .plane img {
+  opacity: 1;
+  object-fit: cover;
+}
+
+.dg.ac {
+  z-index: 999999 !important;
+}

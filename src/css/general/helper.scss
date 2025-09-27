@@ -1,0 +1,222 @@
+.trace,
+.trace * {
+  border: 1px solid darkgray;
+}
+
+.p-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overflow-hidden,
+.o-hide {
+  overflow: hidden !important;
+}
+
+.has-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Overlay
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              Transitions Delay
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.dl-1 {
+  transition-delay: 0.1s !important;
+}
+
+.dl-2 {
+  transition-delay: 0.2s !important;
+}
+
+.dl-3 {
+  transition-delay: 0.3s !important;
+}
+
+.dl-4 {
+  transition-delay: 0.4s !important;
+}
+
+.dl-5 {
+  transition-delay: 0.5s !important;
+}
+
+.dl-6 {
+  transition-delay: 0.6s !important;
+}
+
+.dl-7 {
+  transition-delay: 0.7s !important;
+}
+
+.dl-8 {
+  transition-delay: 0.8s !important;
+}
+
+.dl-9 {
+  transition-delay: 0.9s !important;
+}
+
+.dl-10 {
+  transition-delay: 1s !important;
+}
+
+.dl-11 {
+  transition-delay: 1.1s !important;
+}
+
+.dl-12 {
+  transition-delay: 1.2s !important;
+}
+
+.dl-13 {
+  transition-delay: 1.3s !important;
+}
+
+.dl-14 {
+  transition-delay: 1.4s !important;
+}
+
+.dl-15 {
+  transition-delay: 1.5s !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Phone
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@include media("<phone") {
+  .dl-sm-0 {
+    transition-delay: 0s !important;
+  }
+
+  .h-sm,
+  .h-mob {
+    display: none !important;
+  }
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Phone & Tab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@include media("<=tablet") {
+  .d-desktop {
+    display: none !important;
+  }
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                          Only Tab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+@include media(">=phone", "<=tablet") {
+  .dl-md-0 {
+    transition-delay: 0s !important;
+  }
+
+  .h-tab {
+    display: none !important;
+  }
+
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      Tab and Desktop
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@include media(">=phone") {
+  .d-sm {
+    display: none !important;
+  }
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       Only Desktop
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@include media(">tablet") {
+  .h-desktop {
+    display: none !important;
+  }
+
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                  Section  Paddings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.st {
+  padding-top: var(--section-padding);
+}
+
+.sb {
+  padding-bottom: var(--section-padding);
+}
+
+.sy {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+
+
+ 
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                  Grid Paddings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.pt {
+  padding-top: var(--grid-padding);
+}
+
+.pb {
+  padding-bottom: var(--grid-padding);
+}
+
+.py {
+  padding-top: var(--grid-padding);
+  padding-bottom: var(--grid-padding);
+}

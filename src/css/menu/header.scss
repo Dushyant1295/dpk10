@@ -1,0 +1,93 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 2.5rem;
+  z-index: 99;
+  color: white;
+  mix-blend-mode: difference;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.7s ease;
+
+  ul li {
+    display: inline;
+    list-style: none;
+  }
+
+  .header-logo {
+    svg {
+      fill: #fff;
+      height: 4.5rem;
+      width: 14rem;
+    }
+  }
+
+  .links {
+    a {
+      margin-left: 1.5rem;
+      line-height: 1.8rem;
+      font-weight: normal;
+    }
+  }
+}
+
+.p-top {
+  padding-top: calc(var(--grid-padding) + 3rem) !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             For The Submenu 👇 👇 👇 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.hasDropdown {
+  padding-bottom: 1rem;
+  position: relative;
+
+  .dropdown-menu {
+    min-width: 150px;
+    list-style: none;
+    position: absolute;
+    background: darkgray;
+    top: 100%;
+    border-radius: 3px;
+    padding: 1rem;
+    left: 0;
+    opacity: 1;
+    visibility: hidden;
+    transition: 0.3s;
+    transform: scaleY(0);
+    transform-origin: top center;
+    text-align: left;
+
+    li {
+      display: block;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      a {
+        display: block;
+        margin: 0 !important;
+      }
+    }
+  }
+
+  &:hover ul.dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        <ul>
+          <li class="hasDropdown">
+            Home
+            <ul class="dropdown-menu">
+              <li><a href="#dd">dropdown-menu</a></li>
+              <li><a href="#d">dropdown-menu</a></li>
+            </ul>
+          </li>
+          <li><a class="lineHover" href="pageColor.php">Page Color</a></li>
+          <li><a class="lineHover" href="hoversection.php">Hover</a></li>
+          <li><a class="lineHover" href="loco.php">Locomotive</a></li>
+       </ul>            
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

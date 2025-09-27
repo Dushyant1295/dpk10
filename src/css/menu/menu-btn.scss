@@ -1,0 +1,44 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               Menu With Indicator 👇 👇 👇 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.menu-btn {
+    position: fixed;
+    z-index: 9999;
+    top: 2rem;
+    right: 4.5vw;  // from container width
+    mix-blend-mode: difference;
+    cursor: pointer;
+    span{
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    span.first {
+      margin-right: -3rem;
+      color: white;
+    }
+    svg {
+      path {
+        fill: none;
+        stroke: rgb(255, 255, 255);
+        stroke-width: 1;
+        visibility: inherit;
+        opacity: 1;
+      }
+      .bg {
+        opacity: 0.2;
+        & path {
+          stroke-dashoffset: 0;
+          stroke-dasharray: none;
+        }
+      }
+  
+      .over {
+        & path {
+          stroke-dashoffset: -100;
+          stroke-dasharray: 100px;
+        }
+      }
+    }
+  }
+  

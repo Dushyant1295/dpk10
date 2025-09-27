@@ -1,0 +1,162 @@
+ 
+
+/* Countdown Body Container */
+.countdown-body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Current Date Display */
+.current-date {
+    position: absolute;
+    // height: 2rem;
+    top: auto;
+    bottom: 3rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+        
+    font-size: 1.7rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.625rem);
+    -webkit-backdrop-filter: blur(0.625rem);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+    z-index: 10;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    // width: 10rem;
+    white-space: nowrap;
+    
+}
+
+ 
+ 
+
+/* Header Section */
+.countdown-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    opacity: 0;
+    transform: translateY(1.875rem);
+
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        font-weight: 300;
+    }
+}
+
+/* Main Content Wrapper */
+.countdown-main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 60vh;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(1.25rem);
+    -webkit-backdrop-filter: blur(1.25rem);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 2rem var(--glass-shadow);
+    opacity: 0;
+    transform: translateY(3.125rem);
+    width: 100%;
+    text-align: center;
+}
+
+/* Timer Title */
+.countdown-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+/* Timer Numbers Grid */
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.countdown-item {
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    min-width: 6rem;
+}
+
+.countdown-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    font-weight: 500;
+}
+
+/* Total Hours Display */
+.total-hours {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 0.9375rem;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.total-hours-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.total-hours-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+ 

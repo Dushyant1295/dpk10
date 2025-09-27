@@ -1,0 +1,17 @@
+@import "../media.scss";
+
+.swiper {
+
+  .next,
+  .prev {
+    cursor: pointer
+  }
+}
+
+
+.swiper-pagination-bullet{
+  background-color: lightgray;
+}
+.swiper-pagination-bullet-active{
+  background-color: green !important;
+} 

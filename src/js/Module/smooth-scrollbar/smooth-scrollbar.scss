@@ -1,0 +1,41 @@
+[data-scrollbar][data-scroll-container] {
+  height: 100vh;
+  z-index: 1;
+}
+
+.scroll-content {
+  height: 100%;
+  will-change: transform;
+}
+
+.scrollbar {
+  &-track {
+    right: 0;
+    background: none;
+    z-index: 200;
+    width: 7px;
+  }
+
+  &-thumb {
+    &-y {
+      background: turquoise !important;
+      opacity: 1 !important;
+      transition: opacity 200ms ease-in-out;
+      border-radius: 0;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

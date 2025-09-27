@@ -1,0 +1,30 @@
+@import "../media.scss";
+
+
+.load__container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 101;
+  overflow: hidden;
+}
+
+.loader__curve {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 98;
+}
+
+.load__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
