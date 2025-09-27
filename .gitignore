@@ -1,0 +1,32 @@
+# Ignore everything by default
+*
+
+# But allow the components folder and its contents
+!components/
+!components/**
+
+# Allow this gitignore file itself
+!.gitignore
+
+# Common development files to ignore (in case they exist in components)
+*.log
+*.tmp
+*.temp
+*.cache
+*.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Node modules if they exist in components
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
