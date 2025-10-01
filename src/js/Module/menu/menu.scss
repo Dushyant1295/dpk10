@@ -1,4 +1,5 @@
-@import "../media.scss";
+@use "../media" as *;
+
 
 .menu-wrapper {
     position: fixed;

@@ -24,7 +24,7 @@
   margin-left: calc(var(--bs-gutter-x) * -0.5);
 }
 
-.row > * {
+.row>* {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 100%;
@@ -32,6 +32,10 @@
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
+}
+
+.col {
+  flex-grow: 1;
 }
 
 .col-auto {

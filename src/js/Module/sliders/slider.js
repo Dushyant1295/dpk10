@@ -2,9 +2,10 @@ import "./slider.scss";
 import Swiper from "swiper/bundle";
 
 class Slider {
-  constructor(el, slides) {
+  constructor(el, slides,sp) {
     this.el = el;
-    this.slides = slides;
+    this.slides = slides || 3;
+    this.space = sp || 20;
     this.slider = null;
     this.create();
   }
@@ -16,12 +17,15 @@ class Slider {
 
     this.slider = new Swiper(this.el, {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: this.space,
       speed: 600,
 
       breakpoints: {
         1024: {
           slidesPerView: this.slides,
+        },
+        768: {
+          slidesPerView: this.slides - 1,
         },
       },
 
@@ -51,86 +55,26 @@ class Slider {
   }
 }
 
+var swiperSliders = [];
 
-
-
-
-var tabSlider;
-function createtabSlider(swiperEl) {
-  tabSlider = new Swiper(swiperEl, {
-    slidesPerView: 1,
-    speed: 600,
+function initSlider() {
+  const sliders = document.querySelectorAll(".slider");
+  sliders.forEach((slider) => {
+    const sliderSwiper = slider.querySelector(".swiper");
+    const slides = slider.getAttribute("data-slides");
+    const space = slider.getAttribute("data-space");
+    const slsw = new Slider(sliderSwiper, slides, space);
+    swiperSliders.push(slsw);
   });
 
-  const buttons = document.querySelectorAll(".tab-btn");
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const index = button.getAttribute("data-index");
-      tabSlider.slideTo(index);
-      buttons.forEach((btn) => {
-        if (btn === button) {
-          btn.classList.add("active");
-        } else {
-          btn.classList.remove("active");
-        }
-      });
-    });
-  });
-}
-
-
-const tabVar = document.querySelector(".tab-slider .swiper");
-if (tabVar) {
-    createtabSlider(tabVar)
-}
-
-export { Slider };
-
-
-
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-    var swiperSliders = [];
-    import { Slider } from "./sliders/slider";
- 
-    const sliders = document.querySelectorAll(".slider");
-
-    sliders.forEach((slider, index) => {
-        const sliderSwiper = slider.querySelector(".swiper");
-        const slides = slider.getAttribute("data-slides");
-        const slsw = new Slider(sliderSwiper, slides);
-        swiperSliders.push(slsw);
-    });
-    
-    swiperSliders.forEach(slider => {
-        slider?.destroy();
-    });
   
-    swiperSliders.length = 0;
-    
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+}
 
+function destroySlider() {
+  swiperSliders.forEach((slider) => {
+    slider?.destroy();
+  });
+  swiperSliders.length = 0;
+}
 
-
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                 Tab Slider               
-                  
-<div class="tab-slider">
-    <div class="tab-btns">
-        <span class="tab-btn linehover active" data-index="0">Car</span>
-        <span class="tab-btn linehover" data-index="1">Parking</span>
-    </div>
-
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-        </div>
-    </div>
-</div>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+export { Slider, initSlider, destroySlider };

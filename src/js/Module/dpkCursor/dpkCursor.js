@@ -2,14 +2,7 @@ import "./dpkCursor.scss";
 import gsap from "gsap";
 import { clamp, getOffset } from "../Helper"
 
-import Stats from "stats.js"
-
-const stats = new Stats();
-stats.showPanel(0);
-document.body.appendChild(stats.dom);
-
-
-
+ 
 export default class dpkCursor {
 
   constructor(option = {}) {
@@ -86,13 +79,13 @@ export default class dpkCursor {
       this.ySet = gsap.quickSetter(this.cursor, "y", "px");
 
       gsap.ticker.add(() => {
-        stats.begin();
+       
         const dt = 1.0 - Math.pow(1.0 - this.option.ease, gsap.ticker.deltaRatio());
         this.cursorPos.x += (this.mousePos.x - this.cursorPos.x) * dt;
         this.cursorPos.y += (this.mousePos.y - this.cursorPos.y) * dt;
         this.xSet(this.cursorPos.x);
         this.ySet(this.cursorPos.y);
-        stats.end();
+       
       });
     } else {
       console.warn("gsap is not defined")

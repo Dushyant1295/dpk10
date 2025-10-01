@@ -10,7 +10,7 @@ function createhoverSlider(swiperEl) {
         direction: getDirection(),
         parallax: true,
         effect: "slide",
-
+        
         speed: 800,
         breakpoints: {
             1024: {
@@ -30,12 +30,16 @@ function destroyhoverSlider() {
 }
 
 
+
 const sliderP = document.querySelectorAll(".ttt a");
 sliderP.forEach(function (v, i, a) {
-    v.addEventListener("click", function () {
-        hoverSlider.slideTo(i, 1200, false);
+    v.addEventListener("mouseenter", function () {
+        hoverSlider.slideTo(i, 900, false);
     });
 });
+
+
+
 
 
 
@@ -45,7 +49,7 @@ sliderP.forEach(function (v, i, a) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 export const hoverSliderView = {
-    namespace: "Layout",
+    namespace: "hover-slider",
 
     afterEnter() {
         const hs = select(".hover-slider .swiper");

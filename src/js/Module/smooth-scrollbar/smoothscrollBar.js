@@ -7,8 +7,6 @@ import HorizontalScrollPlugin from "./HorizontalScrollPlugin";
 import SoftScrollPlugin from "./SoftScrollPlugin";
 SmoothScrollbar.use(SoftScrollPlugin, HorizontalScrollPlugin);
 
-// import { curtains } from "../curtain/Effect4/curtainEffect";
-
 var scroll;
 
 function smooth(sContainer) {
@@ -25,24 +23,10 @@ function smooth(sContainer) {
         },
     });
 
-
-    scroll.addListener((obj) => {
-        const vProgress = ((obj.offset.y / obj.limit.y) * 100).toFixed(2);
-        console.log(vProgress);
-
-    });
-
-    // if (currentScrollContainer.querySelector(".plane")) {
-    //     scroll.addListener((obj) => {
-    //         curtains.updateScrollValues(obj.offset.x, obj.offset.y);
-    //     });
-    // }
-
-
     const menuBar = select(".over > path");
     if (menuBar) {
         scroll.addListener((obj) => {
-            const vProgress = ((obj.offset.y / obj.limit.y) * 100).toFixed(2);
+            const vProgress = (obj.offset.y / obj.limit.y) * 100;
             menuBar.style.strokeDashoffset = vProgress - 100;
         });
     }
@@ -64,7 +48,15 @@ function smooth(sContainer) {
 
 }
 
-export { scroll, smooth };
+
+function scrollTop() {
+    if (scroll && !isMobile()) {
+        scroll.scrollTo(0, 0, 1000, {
+            // callback: () => console.log('done!')
+        });
+    }
+}
+export { scroll, scrollTop, smooth };
 
 
 

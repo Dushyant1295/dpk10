@@ -1,0 +1,88 @@
+@use "./media" as *;
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                News Details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.details-page,
+.privacy,
+.terms {
+    display: flex;
+    flex-direction: column;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h5,
+    p {
+        padding-bottom: 3rem;
+    }
+
+    img {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    a {
+        color: var(--orange);
+        transition: all 0.2s ease;
+
+        &:hover {
+            border-bottom: 2px solid var(--orange);
+        }
+    }
+
+    ul {
+        padding-bottom: 4rem;
+
+        li {
+            margin-left: 2rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    blockquote,
+    blockquote p {
+        font-size: 2.5rem;
+    }
+
+    blockquote {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        overflow: visible !important;
+        padding-left: 4vw;
+        background-image: url('data:image/svg+xml,<svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M109 0.948925L106.435 19.7292C99.7671 19.2147 94.8941 20.5868 91.8165 23.8455C88.7388 27.1041 86.858 31.4776 86.1741 36.9659C85.4902 42.4543 85.3192 48.3713 85.6612 54.7172H109V109H65.1435V44.4266C65.1435 28.6477 69.0761 16.8136 76.9412 8.92413C84.9772 1.03468 95.6635 -1.62372 109 0.948925ZM43.8565 0.948925L41.2918 19.7292C34.6235 19.2147 29.7506 20.5868 26.6729 23.8455C23.5953 27.1041 21.7145 31.4776 21.0306 36.9659C20.3467 42.4543 20.1757 48.3713 20.5176 54.7172H43.8565V109H0V44.4266C0 28.6477 3.93255 16.8136 11.7976 8.92413C19.8337 1.03468 30.52 -1.62372 43.8565 0.948925Z" fill="%23fe5e0181"/></svg>');
+
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+
+    .img-gallery {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+
+        img {
+            max-width: 40%;
+            margin: 0 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @include media(">tablet") {
+            justify-content: center;
+
+            img {
+                max-width: 22%;
+            }
+        }
+    }
+
+
+
+
+}

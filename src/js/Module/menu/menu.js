@@ -1,11 +1,8 @@
 import "./menu.scss";
-import { isMobile } from "../Helper";
-import { scroll } from "../smooth-scrollbar/smoothscrollBar";
+ 
+// import { scrollTop } from "../smooth-scrollbar/smoothscrollBar";
 
-
-
-
-function menu1() {
+function menu() {
     const menuWrapper = document.querySelector(".menu-wrapper");
     const closeWrapper = menuWrapper?.querySelector(".close-wrapper");
     const menuBtn = document.querySelector(".menu-btn");
@@ -29,20 +26,48 @@ const menuClose = () => {
     }
 };
 
+ 
+function checkCurrentPage() {
+    const currentURL = document.location.href;
+    const links = document.querySelectorAll("header a");
+    const dropdown = document.querySelectorAll(".hasDropdown");
 
-const preventReload = function (e) {
-    if (e.currentTarget.href === window.location.href) {
-        e.preventDefault();
-        e.stopPropagation();
-        menuClose();
 
-        if (!isMobile()) {
-            scroll.scrollTo(0, 0, 1000, {
-                // callback: () => console.log('done!')
+    links.forEach(link => {
+        const isLinkActive = link.href === currentURL;
+        link.classList.toggle("active", isLinkActive);
+        if (isLinkActive) {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                // scrollTop();
             });
         }
-    }
-};
+    });
+
+    dropdown.forEach(element => {
+        const el = element.querySelector(".dropdown-menu");
+        const subel = el.querySelector("a.active");
+
+        element.classList.toggle("active", subel !== null);
+
+        element.addEventListener("click", () => {
+            setTimeout(() => el.classList.add("disappear"), 400);
+            setTimeout(() => el.classList.remove("disappear"), 900);
+        });
+    });
+}
 
 
-export { menu1, menuClose, preventReload };
+function menuAccordian() {
+    const subArrow = document.querySelectorAll(".h-sub-menu .dropdown-arrow");
+    subArrow.forEach((sarrow) => {
+        sarrow.addEventListener("click", function () {
+            sarrow.parentNode.classList.toggle("active");
+        });
+    });
+}
+
+
+
+
+export { menu, menuClose, checkCurrentPage, menuAccordian };

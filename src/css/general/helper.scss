@@ -1,3 +1,5 @@
+@use "../media" as *;
+
 .trace,
 .trace * {
   border: 1px solid darkgray;
@@ -27,7 +29,6 @@
   background-position: center;
 }
 
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             Overlay
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -43,8 +44,6 @@
   z-index: 1;
   pointer-events: none;
 }
-
-
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
               Transitions Delay
@@ -125,8 +124,6 @@
   }
 }
 
-
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                     Phone & Tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -137,11 +134,9 @@
   }
 }
 
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                           Only Tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 
 @include media(">=phone", "<=tablet") {
   .dl-md-0 {
@@ -151,10 +146,7 @@
   .h-tab {
     display: none !important;
   }
-
 }
-
-
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                       Tab and Desktop
@@ -166,8 +158,6 @@
   }
 }
 
-
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                        Only Desktop
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -176,17 +166,14 @@
   .h-desktop {
     display: none !important;
   }
-
 }
-
-
-
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                   Section  Paddings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.st {
+.st,
+.st-default {
   padding-top: var(--section-padding);
 }
 
@@ -198,11 +185,6 @@
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 }
-
-
-
- 
-
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                   Grid Paddings
@@ -219,4 +201,45 @@
 .py {
   padding-top: var(--grid-padding);
   padding-bottom: var(--grid-padding);
+}
+
+.pe-none {
+  pointer-events: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Spacer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.st-10 {
+  padding-top: 1rem;
+}
+
+.st-20 {
+  padding-top: 2rem;
+}
+
+.st-30 {
+  padding-top: 3rem;
+}
+
+.st-40 {
+  padding-top: 4rem;
+}
+
+.st-50 {
+  padding-top: 5rem;
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              wpml things hide 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+.wpml-ls-statics-footer,
+.grecaptcha-badge,
+.otgs-development-site-front-end {
+  display: none;
 }

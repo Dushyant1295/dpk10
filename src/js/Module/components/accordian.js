@@ -3,32 +3,44 @@ import gsap from "gsap";
 
 
 
-
-function openList(list) {
-    const content = list.querySelector(".accordion-content");
-    gsap.set(content, { height: "auto" });
-    gsap.from(content, { height: 0, ease: "expo.out" });
-    list.classList.add("selected");
-}
-
-function closeList(list) {
-    const content = list.querySelector(".accordion-content");
-    gsap.to(content, { height: 0, ease: "expo.out" });
-    list.classList.remove("selected");
-}
-
 function accordionInit(accordion) {
     const titles = accordion.querySelectorAll(".accordian-title");
-    
+
     titles.forEach(function (list) {
         list.addEventListener("click", function () {
             const parentLi = list.parentNode;
+
             parentLi.classList.contains("selected")
                 ? closeList(parentLi)
                 : openList(parentLi);
+
             // closeAllList();
+
+            setTimeout(() => {
+                const ev = document.createEvent("HTMLEvents");
+                ev.initEvent("resize", true, false);
+                window.dispatchEvent(ev);
+            }, 600);
         });
-    });  
+    });
+
+    function openList(list) {
+        const content = list.querySelector(".accordion_item");
+
+        gsap.set(content, { height: "auto" });
+        gsap.from(content, { height: 0, ease: "expo.out" });
+        list.classList.add("active", "selected");
+
+        setTimeout(function () {
+            list.classList.remove("active");
+        }, 200);
+    }
+
+    function closeList(list) {
+        const content = list.querySelector(".accordion_item");
+        gsap.to(content, { height: 0, ease: "expo.out" });
+        list.classList.remove("selected");
+    }
 }
 
 
@@ -37,12 +49,16 @@ function accordionInit(accordion) {
                  Barba Views
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-function accordian() {
-    const acc = document.querySelector(".accordion");
-    if (acc) accordionInit(acc);
-};
+function accordianView() {
+    const accordions = document.querySelectorAll(".accordion");
+    if (accordions.length > 0) {
+        accordions.forEach(accordion => {
+            accordionInit(accordion);
+        });
+    }
+}
 
-export { accordian };
+export { accordianView };
 
 
 
@@ -66,14 +82,4 @@ function closeAllList() {
     }
   });
 }
-
-
-// no need for now in case need then check
-
-        setTimeout(() => {
-                const ev = document.createEvent("HTMLEvents");
-                ev.initEvent("resize", true, false);
-                window.dispatchEvent(ev);
-            }, 600);
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

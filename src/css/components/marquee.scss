@@ -1,0 +1,129 @@
+@use "../media" as *;
+
+
+.marque {
+    width: 100%;
+    pointer-events: none;
+    overflow: hidden;
+
+
+    .wrapper {
+        height: 100%;
+        width: 100%;
+    }
+
+    .inner {
+        height: 100%;
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        position: relative;
+        will-change: transform;
+
+        a,
+        span {
+            white-space: nowrap;
+            font-size: 5rem !important;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        svg {
+            max-width: 4rem;
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+    }
+}
+
+.marquee-container.entered {
+    .inner svg {
+        animation: spin 5s linear infinite;
+    }
+
+    .inner.right {
+        animation: marquee 15s linear infinite alternate;
+    }
+
+    .inner.left {
+        animation: marquee 15s linear infinite alternate-reverse;
+    }
+
+    @include media("<phone") {
+        .inner.right {
+            animation: marqueemob 20s linear infinite alternate;
+        }
+
+        .inner.left {
+            animation: marqueemob 20s linear infinite alternate-reverse;
+        }
+    }
+}
+
+.marquee-container.exited {
+    .inner {
+        animation-play-state: paused !important;
+    }
+
+    .inner svg {
+        animation-play-state: paused !important;
+    }
+}
+
+@keyframes marquee {
+    to {
+        transform: translate3d(-45%, 0, 0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes marqueemob {
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
+
+
+
+.d-line {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--green) 50%, transparent 50%);
+   
+    background-repeat: repeat-x;
+    background-size: 10px 3px;
+    z-index: 1;
+    margin-bottom: -2px;
+}
+
+@keyframes border-dance {
+    0% {
+        background-position: 0px 0px
+    }
+
+    100% {
+        background-position: 300px 0px
+    }
+}
+
+
+.slider.entered .d-line {
+    
+    animation: border-dance 7s infinite linear
+}
+
+
+.slider.exited .d-line {
+    animation-play-state: paused !important;
+}

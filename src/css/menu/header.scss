@@ -1,24 +1,16 @@
+@use "../media" as *;
+
+
 header {
   position: fixed;
-  width: 100%;
   top: 2.5rem;
-  z-index: 99;
-  color: white;
-  mix-blend-mode: difference;
+  z-index: 101;
   transform: translate3d(0, 0, 0);
   transition: transform 0.7s ease;
-
+ 
   ul li {
-    display: inline;
+    display: inline-block;
     list-style: none;
-  }
-
-  .header-logo {
-    svg {
-      fill: #fff;
-      height: 4.5rem;
-      width: 14rem;
-    }
   }
 
   .links {
@@ -26,37 +18,74 @@ header {
       margin-left: 1.5rem;
       line-height: 1.8rem;
       font-weight: normal;
+      color: black;
+      &.active:before {
+        transform: translateX(0%);
+      }
     }
   }
 }
 
+.header-logo {
+  img {
+    max-width: 7rem;
+  }
+}
+
 .p-top {
-  padding-top: calc(var(--grid-padding) + 3rem) !important;
+  padding-top: calc(var(--grid-padding) + 6rem) !important;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-             For The Submenu 👇 👇 👇 
+                Socials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+.socials {
+  display: inline-flex;
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--orange);
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Drodown 👇 👇 👇 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .hasDropdown {
-  padding-bottom: 1rem;
+  padding-bottom: 0;
   position: relative;
 
+  &.active>a.linehover::before {
+    transform-origin: left center;
+    transform: scale(1, 1);
+  }
+
+  svg {
+    transform: rotate(90deg);
+  }
+
   .dropdown-menu {
-    min-width: 150px;
+   
+
+    visibility: hidden;
+    pointer-events: all;
+
+    min-width: 15rem;
     list-style: none;
     position: absolute;
-    background: darkgray;
-    top: 100%;
+    background: var(--orange);
+    top: 135%;
     border-radius: 3px;
     padding: 1rem;
     left: 0;
-    opacity: 1;
-    visibility: hidden;
-    transition: 0.3s;
-    transform: scaleY(0);
-    transform-origin: top center;
-    text-align: left;
+    opacity: 0;
+
+    transform: translate3d(0px, 2rem, 0px);
+    transition: opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out,
+    transform 0.2s ease-in-out !important;
 
     li {
       display: block;
@@ -64,16 +93,36 @@ header {
       padding-bottom: 0.5rem;
 
       a {
+        width: fit-content;
         display: block;
-        margin: 0 !important;
+        color: white;
       }
     }
+
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 15px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 1rem 0.9rem;
+      border-color: transparent transparent var(--orange);
+    }
+  }
+
+  .dropdown-menu.disappear {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   &:hover ul.dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: scaleY(1);
+    transform: translate3d(0px, 0px, 0px);
   }
 }
 
@@ -88,6 +137,6 @@ header {
           </li>
           <li><a class="lineHover" href="pageColor.php">Page Color</a></li>
           <li><a class="lineHover" href="hoversection.php">Hover</a></li>
-          <li><a class="lineHover" href="loco.php">Locomotive</a></li>
+          
        </ul>            
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

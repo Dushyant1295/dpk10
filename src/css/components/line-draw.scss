@@ -1,6 +1,6 @@
-$line-width: 1.5px;
+$line-width: 1px;
 $line-height: 100%;
-$line-color: #99b1b4;
+$line-color: black;
 $transition-duration: 2s;
 $transition-timing: var(--cb-m3);
 
@@ -52,36 +52,12 @@ $transition-timing: var(--cb-m3);
   }
 }
 
-
-
-
-
-
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-           
-          <div class="line-draw" data-dpk-call>
-            <div class="line black"></div>
-          </div>
-
-          <div class="line-draw from-right" data-dpk-call>
-            <div class="line black"></div>
-          </div>
-
-          <div class="line-draw from-center" data-dpk-call>
-            <div class="line black"></div>
-          </div>
-
-          <div class="line-draw h" data-dpk-call>
-            <div class="line black"></div>
-          </div>
-
-          <div class="line-draw h from-center" data-dpk-call>
-            <div class="line black"></div>
-          </div>
-
-          <div class="line-draw h from-bottom" data-dpk-call>
-            <div class="line cream"></div>
-          </div>
+     
+     <div class="position-relative vh-50">
+            <div class="line-draw h from-left" data-dpk-call>
+                <div class="line"></div>
+            </div>
+        </div>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -1,17 +1,132 @@
-@import "../media.scss";
+@use "../media" as *;
+
 
 .swiper {
-
   .next,
   .prev {
-    cursor: pointer
+    cursor: pointer;
   }
 }
 
-
-.swiper-pagination-bullet{
-  background-color: lightgray;
+.swiper-pagination-bullet {
+  background-color: gray;
 }
-.swiper-pagination-bullet-active{
-  background-color: green !important;
-} 
+
+.swiper-pagination-bullet-active {
+  background-color: var(--orange) !important;
+}
+
+.nav {
+  display: inline-flex;
+  z-index: 3;
+  .next,
+  .prev {
+    cursor: pointer;
+    &:hover {
+      .btn-arrow {
+        border-color: var(--orange);
+      }
+      svg {
+        fill: var(--orange);
+      }
+    }
+  }
+
+  .prev {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .next {
+    svg {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.btn-arrow {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.5rem;
+
+  svg {
+    transform: rotate(-45deg);
+    height: 2.2rem;
+    width: 2.2rem;
+    fill: black;
+    transition: transform 0.2s ease;
+  }
+}
+
+.img-detect {
+  position: relative;
+
+  .arrow {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    z-index: 22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--orange);
+    height: 6rem;
+    width: 6rem;
+    transform: translate(-100%, 130%);
+    transition: transform 0.2s ease;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+      transform: rotate(-45deg);
+      fill: white;
+    }
+  }
+
+  &:hover .arrow {
+    transform: translate(0, 0);
+  }
+
+  @include media("<=tablet") {
+    .arrow {
+      transform: translate(0, 0) !important;
+    }
+  }
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  padding-top: 1.6rem;
+
+  span {
+    color: var(--black);
+    font-weight: 300;
+    font-size: 1.6rem;
+    padding-right: 2rem;
+
+    &:nth-child(1) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        right: 1rem;
+        width: 2px;
+        height: 90%;
+        background-color: var(--orange);
+      }
+    }
+  }
+}
+
+.tab-btn.active {
+  color: red;
+}

@@ -1,5 +1,8 @@
+@use "../media" as *;
+
+
 $accent-color1: #4d4def;
-$accent-color2: black;
+$accent-color2: white;
 $cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 .mob-menu {
@@ -8,8 +11,11 @@ $cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
     left: 100vw;
     top: 0;
     width: 100vw;
-    height: 100vh;
-    background: black;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 4rem;
+    background: linear-gradient(160deg, #022169 64.31%, #2f5192 100%);
     color: white;
     pointer-events: none;
     will-change: transform;
@@ -45,13 +51,13 @@ $cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
         opacity: 0;
         transition: opacity 0.5s ease 0.25s;
 
-        li {
+        &>li {
             position: relative;
             margin: 0;
             padding-bottom: calc(1rem + 2.5vh);
 
-            .active:before {
-                content: "♪";
+            &.active:before {
+                content: "■";
                 display: block;
                 position: absolute;
                 left: -25px;
@@ -82,7 +88,7 @@ $cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
         &:after {
-            width: 2vw;
+            width: 0vw;
             transition: width 1.4s $cubic-bezier 0.25s;
         }
 
@@ -109,10 +115,10 @@ $cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
 /* Close Button */
 .menu-close {
     position: fixed;
-    top: 3rem;
-    right: 1rem;
-    width: 2.5rem;
-    height: 2rem;
+    top: 5rem;
+    right: 2.5rem;
+    width: 5rem;
+    height: 5rem;
     z-index: 999;
     mix-blend-mode: difference;
 
@@ -121,15 +127,98 @@ $cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
         content: "";
         position: absolute;
         display: block;
-        height: 3px;
+        height: 2px;
         width: 75%;
         background: white;
         transition: all 0.8s ease;
+        transform-origin: center;
     }
 
     &:after {
         top: 10px;
         width: 50%;
         left: 25%;
+    }
+}
+
+
+
+
+
+.mob-site-search {
+    padding-top: calc(6rem + 8vh);
+
+    form {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.497);
+        display: flex;
+        align-items: end;
+        padding-bottom: 1.5rem;
+
+        ::placeholder {
+            font-size: 2rem;
+            color: white;
+            text-indent: 0px;
+            padding-left: 0;
+            margin-left: -.5rem;
+
+        }
+
+        input {
+            font-size: 2rem;
+            width: 100%;
+            color: white;
+            border: none;
+            background-color: transparent;
+
+        }
+
+        svg {
+            margin-top: 1rem;
+            height: 2.5rem;
+            width: 2.5rem;
+            fill: white;
+        }
+    }
+}
+
+.dropdown-arrow {
+    height: 2rem;
+    width: 2.35rem;
+    fill: var(--blue);
+    transform: rotate(90deg);
+    position: absolute;
+    top: 1rem;
+    right: 2%;
+}
+
+
+.mob-sub-menu {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem !important;
+    display: none;
+    border-radius: 6px;
+    background: rgba(217, 217, 217, 0.10);
+    margin-top: 2rem;
+    padding: 2.5rem 0;
+    width: 85%;
+
+    a {
+        display: block;
+        margin-left: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1.8rem;
+
+    }
+}
+
+
+
+.h-sub-menu.active {
+    .dropdown-arrow {
+        transform: rotate(-90deg);
+    }
+
+    .mob-sub-menu {
+        display: block;
     }
 }

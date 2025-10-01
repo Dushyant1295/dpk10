@@ -14,10 +14,7 @@
 
 import "@fancyapps/ui/dist/fancybox.css";
 import { Fancybox } from "@fancyapps/ui";
-
  
-
-
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                How to use Jquery
@@ -81,19 +78,19 @@ const lss = new lenisScroll();
 
 
 
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                    Swiper
-        https://swiperjs.com/swiper-api
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Contact Form Init on  barba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+ 
 
-import 'swiper/css/bundle'; all css
-/* 
-    swiper/css/effect-fade
-    swiper/css/autoplay
-    swiper/css/free-mode
-    swiper/css/keyboard
-    swiper/css/mousewheel
-    swiper/css/parallax
-    swiper/css/scrollbar
-*/
+
+function initBeforeEnter() {
+  
+  const cfForms = document.querySelectorAll(".wpcf7 form");
+  if (cfForms.length > 0 && typeof wpcf7 !== "undefined" && typeof wpcf7.init === "function") {
+    cfForms.forEach(function (form) {
+      wpcf7.init(form);
+    });
+  }
+
+}
