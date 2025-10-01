@@ -28,7 +28,6 @@
 
 @use "./typography/typography.scss" as *;
 
- 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                      Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -39,6 +38,36 @@
 
 @use "./components/line-draw.scss" as *;
 
-@use "./components/animation.scss" as *; 
+@use "./components/animation.scss" as *;
 
-@use "./components/table.scss" as *; 
+@use "./components/table.scss" as *;
+
+/*my custom scss desinging for the html file*/
+
+$primary-color: #6366f1;
+$text-dark: #1f2937;
+$text-light: #6b7280;
+$bg-light: #f9fafb;
+$card-bg: #ffffff;
+
+$icon-bg-blue: #dbeafe;
+$icon-blue: #3b82f6;
+
+$icon-bg-green: #d1fae5;
+$icon-green: #10b981;
+
+$icon-bg-purple: #e0e7ff;
+$icon-purple: #6366f1;
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $bg-light;
+  color: $text-dark;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  background-color: pink;
+  text-align: center;
+}
