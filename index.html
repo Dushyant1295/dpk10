@@ -1,35 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dpk</title>
     <link rel="icon" type="image/png" sizes="64x64" href="img/fav.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="dist/style.css" />
-    <meta name="robots" content="noindex">
-    <script type="module" crossorigin src="http://localhost:3000/config/bundler/main.js"></script>
-</head>
+    <meta name="robots" content="noindex" />
+    <script
+      type="module"
+      crossorigin
+      src="http://localhost:3000/config/bundler/main.js"
+    ></script>
+  </head>
 
-<body>
-    <main class="bg-black">
-        <section class="sb p-top">
-            <div class="container">
-                <ul class="box-table">
-                    <li><a href="animations.php" class="p-5"> Animations </a></li>
-                    <li><a href="webgl.php" class="p-5"> Webgl </a></li>
-                    <li><a href="icon.php" class="p-5"> Icons </a></li>
-                    <li><a href="btn.php" class="p-5"> Button </a></li>
-                    <li><a href="horizontal.php" class="p-5"> Horizontal </a></li>
-                    <li><a href="layouts.php" class="p-5"> Layout </a></li>
-                    <li><a href="forms.php" class="p-5"> Forms </a></li>
-                    <li><a href="cursor.php" class="p-5"> Cursor </a></li>
-                    <li><a href="playground.php" class="p-5">Playground </a></li>
-                </ul>
+  <body>
+    <section class="hero-section">
+      <div class="container">
+        <h1>Explore Our Resource Library</h1>
+        <p>
+          Comprehensive compliance resources tailored to your needs, updated
+          daily by our expert team
+        </p>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="container">
+        <div>
+          <ion-icon name="search-outline"></ion-icon>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search Resources"
+          />
+        </div>
+        <select class="filter-select">
+          <option>All Resources</option>
+          <option>XYZ</option>
+          <option>XYZ</option>
+          <option>XYZ</option>
+          <option>XYZ</option>
+          <option>XYZ</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card-section">
+      <div class="container">
+        <div class="row g-4 gap-3">
+          <!-- guides card -->
+          <div class="col-lg-4 col-md-6 border">
+            <div>
+              <div>
+                <div>
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <span>15+ Resources</span>
+              </div>
+              <h3>Guides & Reports</h3>
+              <p>Comprehensive guides and detailed compliance reports</p>
+              <ul>
+                <li><i></i> Implementation Checklist</li>
+                <li><i></i> Legal Framework Guide</li>
+                <li><i></i> Timeline & Deadlines</li>
+              </ul>
+              <a href="#" class="explore-btn">Explore Resources</a>
             </div>
-        </section>
-    </main>
-    <script src="dist/bundle.js"></script>
-</body>
+          </div>
 
+          <div class="col-lg-4 col-md-6 border">
+            <div>
+              <div>
+                <div>
+                  <i class="fas fa-globe"></i>
+                </div>
+                <span>27 Countries</span>
+              </div>
+              <h3>Country-Specific Insights</h3>
+              <p>Localized compliance requirements by jurisdiction</p>
+              <ul>
+                <li><i></i> Germany Requirements</li>
+                <li><i></i> France Guidelines</li>
+                <li><i></i> Italy Regulations</li>
+              </ul>
+              <a href="#" class="explore-btn">Explore Resources</a>
+            </div>
+          </div>
+
+          <!-- EU Directive Card -->
+          <div class="col-lg-4 col-md-6 border">
+            <div>
+              <div>
+                <div>
+                  <i class="fas fa-users"></i>
+                </div>
+                <span>8 Case Studies</span>
+              </div>
+              <h3>EU Directive in Practice</h3>
+              <p>Real-world implementation strategies and case studies</p>
+              <ul>
+                <li><i></i> Multi-national Corp Study</li>
+                <li><i></i> SME Implementation</li>
+                <li><i></i> Industry Best Practices</li>
+              </ul>
+              <a href="#" class="explore-btn">Explore Resources</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 border">
+            <div>
+              <div>
+                <div>
+                  <i class="fas fa-video"></i>
+                </div>
+                <span>12 Hours Content</span>
+              </div>
+              <h3>Webinars & Events</h3>
+              <p>Live sessions and recorded expert presentations</p>
+              <ul>
+                <li><i></i> Monthly Expert Series</li>
+                <li><i></i> Q&A Sessions</li>
+                <li><i></i> Implementation Workshops</li>
+              </ul>
+              <a href="#" class="explore-btn">Explore Resources</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 border">
+            <div>
+              <div>
+                <div>
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <span>Weekly Updates</span>
+              </div>
+              <h3>Latest Research</h3>
+              <p>Expert analysis and regulatory updates</p>
+              <ul>
+                <li><i></i> Regulatory Changes</li>
+                <li><i></i> Market Analysis</li>
+                <li><i></i> Expert Opinions</li>
+              </ul>
+              <a href="#" class="explore-btn">Explore Resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="dist/bundle.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

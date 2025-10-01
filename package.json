@@ -32,6 +32,7 @@
     "@barba/prefetch": "^2.2.0",
     "@studio-freight/lenis": "^1.0.42",
     "@vimeo/player": "^2.29.2",
+    "bootstrap": "^5.3.8",
     "gsap": "^3.13.0",
     "include-media": "^2.0.0",
     "smooth-scrollbar": "^8.8.4",
