@@ -42,6 +42,8 @@
 
 @use "./components/table.scss" as *;
 
+@use "./card.scss" as *;
+
 /*my custom scss desinging for the html file*/
 
 $primary-color: #6366f1;
@@ -71,3 +73,4 @@ body {
   background-color: pink;
   text-align: center;
 }
+
