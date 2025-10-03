@@ -42,13 +42,18 @@
 
 @use "./components/table.scss" as *;
 
+@use "./components/search-bar.scss" as *;
+
+@use "./components/resource-card.scss" as *;
+
 /*my custom scss desinging for the html file*/
 
 $primary-color: #6366f1;
 $text-dark: #1f2937;
 $text-light: #6b7280;
-$bg-light: #f9fafb;
+$bg-light: #f6f9f9;
 $card-bg: #ffffff;
+$border: #9fadbd3d;
 
 $icon-bg-blue: #dbeafe;
 $icon-blue: #3b82f6;
@@ -59,15 +64,33 @@ $icon-green: #10b981;
 $icon-bg-purple: #e0e7ff;
 $icon-purple: #6366f1;
 
-body {
-  font-family: "Montserrat", sans-serif;
-  background-color: $bg-light;
-  color: $text-dark;
+html {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    background-color: #f6f9f9;
+    color: #333;
+  }
 }
 
-.hero-section {
+.container {
   display: flex;
-  justify-content: center;
-  background-color: pink;
-  text-align: center;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+
+    h1 {
+      font-size: 48px;
+    }
+    p {
+      font-size: 18px;
+      color: #41464f;
+    }
+  }
 }
