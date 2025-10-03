@@ -1,14 +1,17 @@
 .resource-grid {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  background-color: yellow;
   column-gap: 10px;
   row-gap: 12px;
+
+  .row {
+    gap: 20px;
+  }
 
   .resource-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 353px;
     height: 352px;
     border-radius: 8px;
     border: 1px solid #9fadbd3d;
