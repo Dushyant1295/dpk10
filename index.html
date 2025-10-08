@@ -1,193 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dpk</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="img/fav.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="robots" content="noindex" />
+    <script
+      type="module"
+      crossorigin
+      src="http://localhost:3000/config/bundler/main.js"
+    ></script>
+    <link rel="stylesheet" href="./dist/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dpk</title>
-  <link rel="icon" type="image/png" sizes="64x64" href="img/fav.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <meta name="robots" content="noindex" />
-  <script type="module" crossorigin src="http://localhost:3000/config/bundler/main.js"></script>
-  <link rel="stylesheet" href="./dist/style.css" />
-</head>
-
-<body>
-
-
-
-  <section>
+  <body>
     <div class="container">
-      <div class="row">
-
-      <div class="search-bar">
-        <div class="search-wrapper">
-          <img src="./img/lens.svg" />
-          <input type="text" placeholder="Search Resources" />
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">
+              35+ <img src="/img/angle-vector.svg" alt="" />
+            </div>
+            <div class="stat-description">
+              Key stakeholders and business relationships spread across
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">68,505</div>
+            <div class="stat-description">Waste Treated Annually (tons)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">
+              11 <img src="/img/angle-vector.svg" alt="" />
+            </div>
+            <div class="stat-description">
+              Green Projects implemented (projects)
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">
+              109 <img src="/img/angle-vector.svg" alt="" />
+            </div>
+            <div class="stat-description">Employees</div>
+          </div>
         </div>
-        <select class="filter-dropdown">
-          <option>All Resources</option>
-          <option>Guides & Reports</option>
-          <option>Country-Specific Insights</option>
-          <option>EU Directive in Practice</option>
-          <option>Webinars & Events</option>
-          <option>Latest Research</option>
-        </select>
-      </div>
 
-      <div class="resource-grid container-fluid">
-        <div class="row">
-          <div class="resource-card col-12 col-md-4 col-lg-4">
-            <div class="card-header">
-              <div class="icon-wrapper icon-mint">
-                <img src="./img/doc.svg" />
-              </div>
-              <span class="count-badge">15+ Resources</span>
-            </div>
-            <h2 class="card-title">Guides & Reports</h2>
-            <p class="card-description">
-              Comprehensive guides and detailed compliance reports
+        <div class="highlights-section">
+          <div class="highlights-content">
+            <h2 class="highlights-title">Highlights from What we do</h2>
+            <p class="highlights-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco
             </p>
-            <div class="card-link-wrapper">
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Implementation Checklist</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Legal Framework Guide</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Timeline & Deadlines</p>
-              </div>
-            </div>
-            <button class="explore-btn">Explore Resources</button>
+            <a href="#" class="explore-btn">Explore More</a>
           </div>
-          <div class="resource-card col-12 col-md-4 col-lg-4">
-            <div class="card-header">
-              <div class="icon-wrapper icon-teal">
-                <img src="./img/pin-icon.svg" class="w-75" alt="" />
-              </div>
-              <span class="count-badge">27 Countries</span>
-            </div>
-            <h2 class="card-title">Country-Specific Insights</h2>
-            <p class="card-description">
-              Localized compliance requirements by jurisdiction
-            </p>
-            <div class="card-link-wrapper">
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Germany Requirements</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>France Guidelines</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Italy Regulations</p>
+
+          <div class="cards-grid">
+            <div class="card card-banking">
+              <img
+                src="/img/investment-partnership.svg"
+                class="tri-image"
+                alt=""
+              />
+              <div class="card-content">
+                <h3 class="card-title">Corporate<br />Banking</h3>
+                <img src="/img/arrow.svg" alt="" />
               </div>
             </div>
-            <button class="explore-btn">Explore Resources</button>
+            <div class="card card-investments">
+              <img src="/img/corporate-banking.svg" class="tri-image" alt="" />
+              <div class="card-content">
+                <h3 class="card-title">Investments &<br />Partnerships</h3>
+                <img src="/img/arrow.svg" alt="" />
+              </div>
+            </div>
           </div>
-          <div class="resource-card col-12 col-md-4 col-lg-4">
-            <div class="card-header">
-              <div class="icon-wrapper icon-blue">
-                <img src="./img/people.svg" class="w-75" alt="" />
-              </div>
-              <span class="count-badge">8 Case Studies</span>
-            </div>
-            <h2 class="card-title">EU Directive in Practice</h2>
-            <p class="card-description">
-              Real-world implementation strategies and case studies
+        </div>
+      </div>
+      <div class="container-2">
+        <div class="child">
+          <div class="content">
+            <h4>Partners</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco
             </p>
-            <div class="card-link-wrapper">
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Multi-national Corp Study</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>SME Implementation</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Industry Best Practices</p>
-              </div>
-            </div>
-            <button class="explore-btn">Explore Resources</button>
           </div>
-          <div class="resource-card col-12 col-md-4 col-lg-4">
-            <div class="card-header">
-              <div class="icon-wrapper icon-mint">
-                <img src="./img/video.svg" class="w-75" alt="" />
-              </div>
-              <span class="count-badge">12 Hours Content</span>
-            </div>
-            <h2 class="card-title">Webinars & Events</h2>
-            <p class="card-description">
-              Live sessions and recorded expert presentations
-            </p>
-            <div class="card-link-wrapper">
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Monthly Expert Series</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Q&A Sessions</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Implementation Workshops</p>
-              </div>
-            </div>
-            <button class="explore-btn">Explore Resources</button>
+          <div class="cta-btn">
+            <button>Explore more</button>
           </div>
-          <div class="resource-card col-12 col-md-4 col-lg-4">
-            <div class="card-header">
-              <div class="icon-wrapper icon-teal">
-                <img src="./img/research.svg" class="w-75" alt="" />
+        </div>
+        <img src="/img/dotted-bg.svg" class="dot-img" alt="" />
+      </div>
+      <div class="container">
+        <div class="heading">
+          <h2>
+            Case studies lorem <br />
+            Ipsum dolor sit amet
+          </h2>
+          <div><button>View all</button></div>
+        </div>
+        <div class="card-div">
+          <div class="card-content">
+            <div class="img-div"><img src="/img/solarpanel.png" alt="" /></div>
+            <div class="contents">
+              <h6>
+                Lorem Ipsum dolor sit <br />
+                Amet ers fry
+              </h6>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco
+              </p>
+              <div class="border-div">
+                <img src="/img/angle-vector-orange.svg" alt="" />
+                <h1>25%</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetadipiscing elit sit amet,
+                </p>
               </div>
-              <span class="count-badge">Weekly Updates</span>
+              <div class="tags">
+                <span>sustainability</span>
+                <span>tag 1</span>
+                <span>tag 2</span>
+                <span>tag 3</span>
+              </div>
             </div>
-            <h2 class="card-title">Latest Research</h2>
-            <p class="card-description">
-              Expert analysis and regulatory updates
-            </p>
-            <div class="card-link-wrapper">
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Regulatory Changes</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Market Analysis</p>
-              </div>
-              <div class="card-link">
-                <img src="./img/chevron-right.svg" />
-                <p>Expert Opinions</p>
-              </div>
-            </div>
-            <button class="explore-btn">Explore Resources</button>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-
-
-
-
-
-  <script src="dist/bundle.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-
+    <script src="dist/bundle.js"></script>
+  </body>
 </html>

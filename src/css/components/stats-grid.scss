@@ -1,0 +1,36 @@
+$text-primary: #461f49;
+
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 80px;
+
+  .stat-item {
+    position: relative;
+
+    .stat-number {
+      font-size: 4.3rem;
+      font-weight: 400;
+      color: $text-primary;
+      margin-bottom: 8px;
+      position: relative;
+      display: inline-block;
+
+      img {
+        width: 34px;
+        height: 40px;
+        position: absolute;
+        top: -5px;
+        right: -20px;
+      }
+    }
+
+    .stat-description {
+      font-size: 1.06rem;
+      color: $text-primary;
+      line-height: 1.4;
+      max-width: 220px;
+    }
+  }
+}
