@@ -5,3 +5,5 @@ css/components/*.css
 .vscode
 ref/
 node_modules/*
+/dist
+dist/
