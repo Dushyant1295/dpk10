@@ -3,8 +3,8 @@ $text-primary: #461f49;
 .stats-grid {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 80px;
+  gap: 2.5rem;
+  margin-bottom: 5rem;
 
   .stat-item {
     position: relative;
@@ -13,16 +13,16 @@ $text-primary: #461f49;
       font-size: 4.3rem;
       font-weight: 400;
       color: $text-primary;
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
       position: relative;
       display: inline-block;
 
       img {
-        width: 34px;
-        height: 40px;
+        width: 2.12rem;
+        height: 2.5rem;
         position: absolute;
-        top: -5px;
-        right: -20px;
+        top: -0.31rem;
+        right: -1.25rem;
       }
     }
 
@@ -30,7 +30,7 @@ $text-primary: #461f49;
       font-size: 1.06rem;
       color: $text-primary;
       line-height: 1.4;
-      max-width: 220px;
+      max-width: 13.75rem;
     }
   }
 }

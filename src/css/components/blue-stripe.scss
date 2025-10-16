@@ -3,9 +3,6 @@ $bg-secondary: #e6cfa1;
 $text-primary: #3e0937;
 
 .container {
-  position: relative;
-  overflow: hidden;
-
   .child {
     background-color: $bg-primary;
     height: 14.8rem;
@@ -13,7 +10,7 @@ $text-primary: #3e0937;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem 6rem;
+    padding: 0rem 2rem;
 
     .content {
       height: 100%;
@@ -38,7 +35,7 @@ $text-primary: #3e0937;
         font-size: 1rem;
         font-weight: 500;
         padding: 1rem 3rem;
-        border-radius: 100px;
+        border-radius: 6.25rem;
         text-transform: uppercase;
       }
     }
