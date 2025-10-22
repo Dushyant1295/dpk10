@@ -1,6 +1,6 @@
 .loader {
-  height: 4px;
-  width: 130px;
+  height: 2px;
+  width: 250px;
   --c: no-repeat linear-gradient(rgb(255, 255, 255) 0 0);
   background: var(--c), var(--c), #84370ac1;
   background-size: 60% 100%;
@@ -28,10 +28,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 15px;
   align-items: center;
   z-index: 9999;
   transition: transform 0.8s ease, opacity 0.8s ease;
-  background-color: #84370a;
+  background-color: #58250c;
+
+  p {
+    font-weight: 300;
+  }
 }
 
 /* When hidden, slide it up */
@@ -99,11 +104,7 @@ nav {
 }
 
 .hero-container {
-  position: fixed;
-  top: 0;
-  padding: 10rem 0 0 0;
   padding-bottom: 3rem;
-  background-color: #84370aef;
 }
 
 .hero {
@@ -179,11 +180,8 @@ nav {
 }
 
 .product-container {
-  margin-top: 100vh;
-  position: absolute;
-  padding: 13rem 13rem 5rem 13rem;
   opacity: 100%;
-  background-color: #84370a;
+  background-color: none;
 }
 
 .hero-2 {
@@ -213,6 +211,7 @@ nav {
     color: white;
     font-size: 1.8rem;
     font-weight: 250;
+    margin-top: 2rem;
   }
   .chevron {
     height: 1.3rem;
@@ -275,4 +274,13 @@ nav {
   img {
     height: 2.5rem;
   }
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
