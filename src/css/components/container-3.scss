@@ -3,92 +3,171 @@ $secondary-text: #c75010;
 $bg-primary: #e6cfa1;
 $bg-secondary: #eecbb7;
 
-.container {
-  .heading {
+// .container {
+//   .heading {
+//     display: flex;
+//     justify-content: space-between;
+//     color: $primary-text;
+//     width: 100%;
+
+//     h2 {
+//       font-size: 3.12rem;
+//       font-weight: 400;
+//     }
+
+//     button {
+//       background-color: $bg-primary;
+//       font-size: 1rem;
+//       font-weight: 500;
+//       padding: 1rem 3rem;
+//       border-radius: 6.25rem;
+//       text-transform: uppercase;
+//     }
+//   }
+
+//   .card-div {
+//     width: 802px;
+//     background-color: $bg-secondary;
+//     border-radius: 1.75rem;
+//     padding: 2rem;
+
+//     .card-content {
+//       display: flex;
+//       justify-content: space-between;
+//       gap: 3rem;
+//       .img-div {
+//         width: 65%;
+//         img {
+//           width: 100%;
+//           height: 34.25rem;
+//           border-radius: 1.75rem;
+//         }
+//       }
+
+//       .contents {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         gap: 1rem;
+//         width: 40%;
+//         color: $secondary-text;
+//         padding-right: 1rem;
+//         h6 {
+//           font-size: 1.87rem;
+//           font-weight: 400;
+//         }
+//         p {
+//           font-size: 1rem;
+//         }
+
+//         .border-div {
+//           border: 1px solid $secondary-text;
+//           padding: 1rem 1.5rem;
+//           padding-top: 3.5rem;
+//           border-radius: 1.3rem;
+//           position: relative;
+//           img {
+//             position: absolute;
+//             width: 3.31rem;
+//             left: 7.5rem;
+//             top: 1.5rem;
+//           }
+//           h1 {
+//             font-size: 4.5rem;
+//             font-weight: 400;
+//           }
+//         }
+
+//         .tags {
+//           display: flex;
+//           gap: 2rem;
+//           padding: 1rem 0;
+//           span {
+//             border: 1px solid $secondary-text;
+//             border-radius: 3.12rem;
+//             padding: 0.31rem 0.62rem;
+//             font-size: 0.62rem;
+//             text-transform: uppercase;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+.card-sec {
+  .button-container {
     display: flex;
-    justify-content: space-between;
-    color: $primary-text;
-    width: 100%;
-
-    h2 {
-      font-size: 3.12rem;
-      font-weight: 400;
-    }
-
+    justify-content: end;
+    align-items: center;
     button {
       background-color: $bg-primary;
       font-size: 1rem;
       font-weight: 500;
       padding: 1rem 3rem;
-      border-radius: 100px;
+      border-radius: 6.25rem;
       text-transform: uppercase;
     }
   }
 
   .card-div {
-    width: 802px;
     background-color: $bg-secondary;
-    border-radius: 1.75rem;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+    border-radius: 1.3rem;
 
-    .card-content {
+    .img-div {
+      position: relative;
+      img {
+        border-radius: 1.3rem;
+        height: 35.6rem;
+        width: 95%;
+      }
+    }
+
+    .contents {
       display: flex;
-      justify-content: space-between;
-      gap: 3rem;
-      .img-div {
-        width: 65%;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      width: 40%;
+      color: $secondary-text;
+      padding-right: 1rem;
+      h6 {
+        font-size: 1.87rem;
+        font-weight: 400;
+      }
+      p {
+        font-size: 1rem;
+      }
+
+      .border-div {
+        border: 1px solid $secondary-text;
+        padding: 1rem 1.5rem;
+        padding-top: 3.5rem;
+        border-radius: 1.3rem;
+        position: relative;
         img {
-          width: 100%;
-          height: 34.25rem;
-          border-radius: 1.75rem;
+          position: absolute;
+          width: 3.31rem;
+          left: 9rem;
+          top: 2rem;
+        }
+        h1 {
+          font-size: 4.5rem;
+          font-weight: 400;
         }
       }
 
-      .contents {
+      .tags {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
-        width: 40%;
-        color: $secondary-text;
-        padding-right: 1rem;
-        h6 {
-          font-size: 1.87rem;
-          font-weight: 400;
-        }
-        p {
-          font-size: 1rem;
-        }
-
-        .border-div {
+        gap: 2rem;
+        padding: 1rem 0;
+        span {
           border: 1px solid $secondary-text;
-          padding: 1rem 1.5rem;
-          padding-top: 3.5rem;
-          border-radius: 1.3rem;
-          position: relative;
-          img {
-            position: absolute;
-            width: 53px;
-            left: 7.5rem;
-            top: 1.5rem;
-          }
-          h1 {
-            font-size: 4.5rem;
-            font-weight: 400;
-          }
-        }
-
-        .tags {
-          display: flex;
-          gap: 2rem;
-          padding: 1rem 0;
-          span {
-            border: 1px solid $secondary-text;
-            border-radius: 50px;
-            padding: 5px 10px;
-            font-size: 0.62rem;
-            text-transform: uppercase;
-          }
+          border-radius: 3.12rem;
+          padding: 0.31rem 0.62rem;
+          font-size: 0.62rem;
+          text-transform: uppercase;
         }
       }
     }

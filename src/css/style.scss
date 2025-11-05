@@ -42,10 +42,12 @@
 
 @use "./components/table.scss" as *;
 
-@use "./components/stats-grid.scss" as *;
-@use "./components/highlights-sec.scss" as *;
-@use "./components/blue-stripe.scss" as *;
-@use "./components/container-3.scss" as *;
+// @use "./components/stats-grid.scss" as *;
+// @use "./components/highlights-sec.scss" as *;
+// @use "./components/blue-stripe.scss" as *;
+// @use "./components/container-3.scss" as *;
+// @use "./components/windmil-card.scss" as *;
+@use "./components/crowd-lab.scss" as *;
 
 /*my custom scss desinging for the html file*/
 
@@ -67,13 +69,15 @@ $icon-purple: #6366f1;
 
 html {
   body {
-    font-family: "Poppins", sans-serif;
-    background-color: #f6f9f9;
-    color: #333;
+    font-family: "Inter", sans-serif;
+    color: white;
+    background-color: #84370a;
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 200 400; /* covers 200, 300, 400 */
+  font-style: normal;
 }
