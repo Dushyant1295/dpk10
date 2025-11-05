@@ -1,0 +1,292 @@
+$spacing-step: 0.5rem;
+$max: 10;
+
+@for $i from 0 through $max {
+  .ms-#{$i} {
+    margin-right: ($i * $spacing-step) !important;
+  }
+
+  .me-#{$i} {
+    margin-left: ($i * $spacing-step) !important;
+  }
+
+  .ps-#{$i} {
+    padding-right: ($i * $spacing-step) !important;
+  }
+
+  .pe-#{$i} {
+    padding-left: ($i * $spacing-step) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  @for $i from 0 through $max {
+    .ms-md-#{$i} {
+      margin-right: ($i * $spacing-step) !important;
+    }
+
+    .me-md-#{$i} {
+      margin-left: ($i * $spacing-step) !important;
+    }
+
+    .ps-md-#{$i} {
+      padding-right: ($i * $spacing-step) !important;
+    }
+
+    .pe-md-#{$i} {
+      padding-left: ($i * $spacing-step) !important;
+    }
+  }
+}
+
+@media (min-width: 1179px) {
+  @for $i from 0 through $max {
+    .ms-lg-#{$i} {
+      margin-right: ($i * $spacing-step) !important;
+    }
+
+    .me-lg-#{$i} {
+      margin-left: ($i * $spacing-step) !important;
+    }
+
+    .ps-lg-#{$i} {
+      padding-right: ($i * $spacing-step) !important;
+    }
+
+    .pe-lg-#{$i} {
+      padding-left: ($i * $spacing-step) !important;
+    }
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              All           
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.offset-1 {
+  margin-right: 8.33333333%;
+}
+
+.offset-2 {
+  margin-right: 16.66666667%;
+}
+
+.offset-3 {
+  margin-right: 25%;
+}
+
+.offset-4 {
+  margin-right: 33.33333333%;
+}
+
+.offset-5 {
+  margin-right: 41.66666667%;
+}
+
+.offset-6 {
+  margin-right: 50%;
+}
+
+.offset-7 {
+  margin-right: 58.33333333%;
+}
+
+.offset-8 {
+  margin-right: 66.66666667%;
+}
+
+.offset-9 {
+  margin-right: 75%;
+}
+
+.offset-10 {
+  margin-right: 83.33333333%;
+}
+
+.offset-11 {
+  margin-right: 91.66666667%;
+}
+
+.me-auto {
+  margin-left: auto !important;
+}
+
+.ms-auto {
+  margin-right: auto !important;
+}
+
+.gpe {
+  padding-left: var(--grid-padding);
+}
+
+.gps {
+  padding-right: var(--grid-padding);
+}
+
+.text-start {
+  text-align: right !important;
+}
+
+.text-end {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               from Tablet  ⬜           
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media (min-width: 768px) {
+  .offset-md-1 {
+    margin-right: 8.33333333%;
+  }
+
+  .offset-md-2 {
+    margin-right: 16.66666667%;
+  }
+
+  .offset-md-3 {
+    margin-right: 25%;
+  }
+
+  .offset-md-4 {
+    margin-right: 33.33333333%;
+  }
+
+  .offset-md-5 {
+    margin-right: 41.66666667%;
+  }
+
+  .offset-md-6 {
+    margin-right: 50%;
+  }
+
+  .offset-md-7 {
+    margin-right: 58.33333333%;
+  }
+
+  .offset-md-8 {
+    margin-right: 66.66666667%;
+  }
+
+  .offset-md-9 {
+    margin-right: 75%;
+  }
+
+  .offset-md-10 {
+    margin-right: 83.33333333%;
+  }
+
+  .offset-md-11 {
+    margin-right: 91.66666667%;
+  }
+
+  .gpe-md {
+    padding-left: var(--grid-padding);
+  }
+
+  .gps-md {
+    padding-right: var(--grid-padding);
+  }
+
+  .me-md-auto {
+    margin-left: auto !important;
+  }
+
+  .ms-md-auto {
+    margin-right: auto !important;
+  }
+
+  .text-md-start {
+    text-align: right !important;
+  }
+
+  .text-md-end {
+    text-align: left !important;
+  }
+
+  .text-md-center {
+    text-align: center !important;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          Not from  Desktop 🖥️          
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media (min-width: 1179px) {
+  .offset-lg-1 {
+    margin-right: 8.33333333%;
+  }
+
+  .offset-lg-2 {
+    margin-right: 16.66666667%;
+  }
+
+  .offset-lg-3 {
+    margin-right: 25%;
+  }
+
+  .offset-lg-4 {
+    margin-right: 33.33333333%;
+  }
+
+  .offset-lg-5 {
+    margin-right: 41.66666667%;
+  }
+
+  .offset-lg-6 {
+    margin-right: 50%;
+  }
+
+  .offset-lg-7 {
+    margin-right: 58.33333333%;
+  }
+
+  .offset-lg-8 {
+    margin-right: 66.66666667%;
+  }
+
+  .offset-lg-9 {
+    margin-right: 75%;
+  }
+
+  .offset-lg-10 {
+    margin-right: 83.33333333%;
+  }
+
+  .offset-lg-11 {
+    margin-right: 91.66666667%;
+  }
+
+  .me-lg-auto {
+    margin-left: auto !important;
+  }
+
+  .ms-lg-auto {
+    margin-right: auto !important;
+  }
+
+  .gpe-lg {
+    padding-left: var(--grid-padding);
+  }
+
+  .gps-lg {
+    padding-right: var(--grid-padding);
+  }
+
+  .text-lg-start {
+    text-align: right !important;
+  }
+
+  .text-lg-end {
+    text-align: left !important;
+  }
+
+  .text-lg-center {
+    text-align: center !important;
+  }
+}

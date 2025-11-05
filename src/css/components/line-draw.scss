@@ -1,0 +1,63 @@
+$line-width: 1px;
+$line-height: 100%;
+$line-color: black;
+$transition-duration: 2s;
+$transition-timing: var(--cb-m3);
+
+.line-draw {
+  height: $line-height;
+  width: 1px;
+  overflow: hidden;
+  transition: height 2s $transition-timing;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .line {
+    height: 100%;
+    width: 100%;
+    background-color: $line-color;
+    transform: translateY(-100%);
+    transition: transform $transition-duration $transition-timing;
+  }
+
+  &.h {
+    height: $line-width;
+    width: $line-height;
+    .line {
+      transform: translateY(0);
+      transform: translateX(-100%);
+    }
+  }
+
+  &.from-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.from-right {
+    left: auto;
+    right: 0;
+  }
+  &.from-bottom {
+    top: auto;
+    bottom: 0%;
+  }
+
+  &.entered .line {
+    transform: translateY(0%);
+  }
+  &.entered.h .line {
+    transform: translateX(0);
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     
+     <div class="position-relative vh-50">
+            <div class="line-draw h from-left" data-dpk-call>
+                <div class="line"></div>
+            </div>
+        </div>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

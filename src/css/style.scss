@@ -1,0 +1,125 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    General                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@use "./typography/color.scss" as *;
+
+@use "./general/reset.scss" as *;
+
+@use "./general/general.scss" as *;
+
+@use "./general/helper.scss" as *;
+
+@use "./general/hide-scrollbar.scss" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Bootstrap                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@use "./bootstrap/bs-grid.scss" as *;
+
+@use "./bootstrap/bs-util.scss" as *;
+
+@use "./bootstrap/bs-en.scss" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   Typography                     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@use "./typography/typography.scss" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Menu & Header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@use "./menu/header.scss" as *;
+
+@use "./menu/header-mob.scss" as *;
+
+@use "./footer/footer.scss" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                     Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@use "./components/text-hover.scss" as *;
+
+@use "./components/btn.scss" as *;
+
+@use "./components/line-draw.scss" as *;
+
+@use "./components/animation.scss" as *;
+
+@use "./components/tool-pagination.scss" as *;
+
+@use "./single-post.scss" as *;
+
+@use "./flexible.scss" as *;
+
+@use "./components/marquee.scss" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   Forms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@use "./forms/form-default.scss" as *;
+
+@use "./forms/form-extra.scss" as *;
+
+@use "./forms/form.scss" as *;
+
+@use "./forms/line-form.scss" as *;
+
+@use "./forms/contact-form.scss" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                     Pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@use "./home.scss" as *;
+
+@use "./ayy.scss" as *;
+
+@use "./about.scss" as *;
+
+@use "./contact.scss" as *;
+
+@use "./privacy-terms.scss" as *;
+
+@use "./faq.scss" as *;
+
+@use "./press.scss" as *;
+
+@use "./press-detail.scss" as *;
+
+@use "./career.scss" as *;
+
+@use "./sustainability-impact.scss" as *;
+
+@use "./supplier-registration.scss" as *;
+
+@use "./our-mandate.scss" as *;
+
+@use "./our-structure-leadership.scss" as *;
+
+@use "./our-history.scss" as *;
+
+@use "./what-we-do.scss" as *;
+
+@use "./corporate-banking.scss" as *;
+
+@use "./investments-partnerships.scss" as *;
+
+@use "./case-studies.scss" as *;
+
+@use "./partners.scss" as *;
+
+@use "./investor-relations.scss" as *;
+
+@use "./ir-reports.scss" as *;
+
+@use "./compliance-aml.scss" as *;
+
+@use "./risk-management.scss" as *;
+
+@use "./strategy-impact.scss" as *;

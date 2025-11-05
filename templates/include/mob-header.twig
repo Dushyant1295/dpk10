@@ -1,0 +1,44 @@
+<div class="menu h-desktop">
+	<input type="checkbox" id="trigger" class="mob-menu-trigger" />
+	<label for="trigger" class="menu-close"></label>
+
+
+	<div class="mob-menu container">
+		
+		<div class="mob-site-search">
+            <form class="searchform" role="search" action="{{ site.link }}" method="GET">
+                <div class="row w-100">
+                    <div class="col-10">
+                        <input class="search-input" type="text" name="s" placeholder="Search" />
+                    </div>
+                    <div class="col-2 text-end">
+                        <button class="search-btn search__info" type="submit">
+                            <svg fill="white"> 
+                                <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#search' }}" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+		<ul>
+			{% for item in menu.items %}
+				<li class="{% if item.children %} h-sub-menu {% endif %}">					
+					<a href="{{ item.link }}">{{ item.title }}</a>
+						{% if item.children %}
+							<svg class="dropdown-arrow ms-2" height="1.5rem" width="1.5rem" fill="red">
+								<use xlink:href="{{ theme.link ~ '/src/img/icon.svg#carrow'}}" />
+							</svg>
+
+							<div class="mob-sub-menu ps-2 links">
+								{% for child in item.children %}
+									<a href="{{ child.link }}" {{ child.attr_title }}>{{ child.title }}</a>
+								{% endfor %}
+							</div>
+						{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

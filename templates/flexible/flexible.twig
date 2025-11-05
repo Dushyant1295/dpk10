@@ -1,0 +1,23 @@
+{% set layoutTemplates = {
+    'banner': 'templates/flexible/banner.twig',
+    'single_column': 'templates/flexible/single_column.twig',
+    'two_column': 'templates/flexible/two_column.twig',
+    'columns': 'templates/flexible/column.twig',
+    'accordion': 'templates/flexible/accordion.twig',
+    'marquee_section': 'templates/flexible/marquee.twig',
+    'spacer': 'templates/flexible/spacer.twig',   
+    
+} %}
+
+{% for content in post.meta('generic_fields') %}
+    {% set templatePath = layoutTemplates[content.acf_fc_layout] %}
+    {% if templatePath %}
+        {% include templatePath with { content: content } %}
+    {% else %}
+        <div class="error">
+            Error: Unknown layout type "{{ content.acf_fc_layout }}".
+        </div>
+    {% endif %}
+{% endfor %}
+
+ 

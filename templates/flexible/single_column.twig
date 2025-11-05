@@ -1,0 +1,19 @@
+{% if not content.hidden %}
+    {% set bg_img = get_image(content.background_image) %}
+    <section class="single-column sy{% if bg_img %} has-bg{% endif %}" {% if bg_img %}style="background-image:url('{{ bg_img.guid }}');"{% endif %}>
+        <div class="container">
+            <div class="row justify-content-{{ content.alignment }}">
+                <div class="col-lg-{{ content.column_width }} tiny-editor text-{{ content.text_alignment }}">
+                    {% if content.section_content %}
+                        {{ content.section_content }}
+                    {% endif %}
+                    {% if content.cta.title %}
+                        <a href="{{ content.cta.url }}" class="btn mt-4" target="{{ content.cta.target ? '_blank' : '_self' }}">
+                            {{ content.cta.title }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

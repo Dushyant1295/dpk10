@@ -1,0 +1,12 @@
+{{ fn('the_post') }}  
+<div class="product-wrapper">
+  {% do action("woocommerce_before_single_product") %}
+  <figure class="product-photo">
+    {% do action("woocommerce_before_single_product_summary") %}
+  </figure>
+  <article class="product-summary">
+    {% do action("woocommerce_single_product_summary") %}
+  </article>
+  {% do action("woocommerce_after_single_product_summary") %}
+  {% do action("woocommerce_after_single_product") %}
+</div>

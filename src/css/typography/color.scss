@@ -1,0 +1,56 @@
+@use "../media" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Variables       
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+:root {
+  --purple: #3e0937;
+  --blue: #67bdbb;
+  --sky-blue: #8bbabb;
+  --green: #525e26;
+  --orange: #c75110;
+
+  --cream: #e6cfa1;
+
+  --grid-padding: 5.5vw;
+  --section-padding: 8.5rem;
+
+  --cb-m1: cubic-bezier(0.23, 1, 0.32, 1);
+  --cb-m2: cubic-bezier(0, 0.96, 0.22, 1);
+  --cb-m3: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  --cb-m4: cubic-bezier(0.19, 1.51, 0.29, 0.99);
+
+  @include media(">=phone", "<=tablet") {
+    --grid-padding: 3vw;
+    --section-padding: 7.5rem;
+  }
+
+  @include media("<phone") {
+    --grid-padding: 3.5vw;
+    --section-padding: 6.5rem;
+  }
+}
+
+::selection {
+  color: #fdfdfd;
+  background: #0044d8;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                  Colors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.bg-white {
+  background-color: white;
+  color: var(--purple);
+}
+
+.text-white {
+  color: #fff;
+}
+
+.bg-purple {
+  background-color: var(--purple);
+  color: white;
+}

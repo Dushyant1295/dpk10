@@ -1,0 +1,23 @@
+<section class="sy">
+    <div class="container">
+        <ol class="accordion">
+            {% for rep in content.faq_section %}
+            {% set title = rep.faq_title %}    
+            {% set faq_content = rep.faq_item %}    
+
+            <li class="{% if loop.index == 1 %}selected{% endif %}">
+                    <div class="accordian-title">
+                        <h5>  {{ title }}  </h5>
+                        <span class="more"><svg>
+                                <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#carrow'}}" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="accordion_item">
+                        {{ faq_content }}
+                    </div>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>

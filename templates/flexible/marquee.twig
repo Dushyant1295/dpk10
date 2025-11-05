@@ -1,0 +1,19 @@
+{% set marque = content.marquee %}
+<section class="sy">
+    <div class="marquee-container" data-dpk-call>
+        <div class="marque">
+            <div class="wrapper">
+                <div class="inner pb-4 right">
+                    {% for i in 1..2 %}
+                        {% for itm in marque %}
+                        <span>{{ itm.marquee_text }}</span>
+                        <svg class="ms-4" height="2.5rem" width="2.5rem">
+                            <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#star' }}" />
+                        </svg>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<section class="sy">
+  <div class="container">
+    <div class="row pb-6">
+      <div class="col-lg-5">
+        <h2>Latest Press Releases</h2>
+      </div>
+      <div class="col-lg-7 text-end my-auto">
+        <a href="#" class="btn cream">VIEW ALL</a>
+      </div>
+    </div>
+
+    <div class="row g-5 pt-6">
+      {% for i in 1..3 %}
+      <div class="col-lg-4">
+        <div class="press-card">
+          <div class="tags purple mb-4">
+            <span>Sustainability</span>
+            <span>Tag</span>
+          </div>
+          <h4>Lorem Ipsum is simply dummy text of the printin</h4>
+          <div class="d-flex  justify-content-between align-items-center mt-5">
+            <a href="#" class="btn white">Read More</a>
+            <p>September 1, 2023</p>
+          </div>
+          <img class="rounded mt-4" src="{{theme.link ~ '/src/img/home/treeimg.jpg'}}" alt="" />
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

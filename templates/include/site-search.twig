@@ -1,0 +1,22 @@
+<div class="search-form-wrap">
+    <div class="container">
+        <button type="button" class="close-btn">
+            <svg>
+                <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#close' }}" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="search-form">
+        <div class="container">
+            <form role="search" action="{{ site.link }}" method="GET">
+                <input class="search-input" type="text" name="s" placeholder="How we can help you" />
+                <button class="search-btn" type="submit">
+                    <svg>
+                        <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#search' }}" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

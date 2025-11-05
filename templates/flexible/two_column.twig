@@ -1,0 +1,68 @@
+{% if not content.hidden %}
+    {% set opt = content.column_options %}
+    
+    {% if opt == 'text' %}
+        {% set group = content.only_text %}
+        <section class="two-column-text">
+            <div class="container">
+                <div class="row">
+                    {% if group.left_content %}
+                        <div class="col-lg-6 pe-lg-5 pb-6 pb-lg-0">
+                            {{ group.left_content }}
+                        </div>
+                    {% endif %}
+                    {% if group.right_content %}
+                        <div class="col-lg-6">
+                            {{ group.right_content }}
+                        </div>
+                    {% endif %}
+                    <div class="col-lg-12">
+                        {% if group.cta.title %}
+                            <a target="{{ group.cta.target ? '_blank' : '_self' }}" class="btn mt-5" href="{{ group.cta.url }}">
+                                {{ group.cta.title }}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    {% elseif opt == 'text_image' %}
+        {% set group = content.text_and_image %}
+        {% set thumb = get_image(group.thumbnail) %}
+        <section class="{{ group.image_position }} {{ group.class }} two-column-img">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-lg-6 tiny-editor">
+                        {% if group.content %}
+                            {{ group.content }}
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-6 tc-img">
+                        {% if group.youtube_link %}
+                            <a class="vid-banner veno-box" href="{{ group.youtube_link.url }}" data-autoplay="true" data-vbtype="video">
+                        {% endif %}
+                        {% if thumb %}
+                            <img src="{{ thumb }}" alt="{{ thumb.alt }}" />
+                        {% endif %}
+                        {% if group.youtube_link %}
+                            <span class="play-btn">
+                                <svg>
+                                    <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#play' }}" />
+                                </svg>
+                            </span>
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-12">
+                        {% if group.cta.title %}
+                            <a target="{{ group.cta.target ? '_blank' : '_self' }}" class="btn me-5" href="{{ group.cta.url }}">
+                                {{ group.cta.title }}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endif %}

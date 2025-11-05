@@ -1,0 +1,82 @@
+@use "../media" as *;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             Contact Form Stuff
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.wpcf7 form {
+    position: relative;
+}
+
+.wpcf7-form-control-wrap {
+    width: 100%;
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+.wpcf7-not-valid-tip {
+    font-size: 1.2rem !important;
+    bottom: -1rem !important;
+}
+
+.wpcf7-response-output {
+    font-size: 1.25rem !important;
+    width: 100%;
+    line-height: 1.1;
+    border: 1px solid orangered !important;
+    color: orangered;
+    bottom: -5rem !important;
+    left: 0 !important;
+}
+
+
+.sent {
+    .wpcf7-response-output {
+        color: green;
+        border-color: green !important;
+    }
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               Submit Button
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.submit-btn {
+    position: relative;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             Spinner
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.wpcf7-spinner {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              Checkbox & Radio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.wpcf7-radio label {
+    display: flex !important;
+    gap: 1rem;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.wpcf7-checkbox label {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}

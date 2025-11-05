@@ -1,0 +1,53 @@
+<header class="container">
+    <div class="row">
+        <div class="col-lg-2">
+            <a href="/" class="header-logo">
+               <img src="{{ options.site_logo.url }}" alt="{{ options.site_logo.alt }}" />
+            </a>
+        </div>
+
+        <div class="col-lg-8 my-auto text-end d-desktop">
+            <ul>                
+                {% for item in header.get_items %}
+                        <li class="{% if item.children %}hasDropdown {% endif %}ms-5">
+                            <a href="{{ item.link }}" class="linehover"> {{ item.title }} </a>
+                        
+                        {% if item.children %}
+                            <svg height="1rem" width="1rem">
+                                <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#carrow'}}" />
+                            </svg>
+
+                            <ul class="dropdown-menu">
+                                {% for child in item.children %}
+                                    <li>
+                                        <a href="{{ child.link }}" class="linehover white" aria-label="{{ child.title }}" {{ child.attr_title }} >
+                                            {{ child.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+            {% endfor %}
+
+          </ul>
+        </div>
+
+        <div class="col-lg-2 text-end my-auto d-desktop">
+            {% include 'include/social.twig' %}
+
+            <span id="search" class="site-search ps-lg-5">
+                <svg height="2rem" width="2rem">
+                    <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#search'}}" />
+                </svg>
+            </span>
+        </div>  
+    </div>
+</header>
+
+{% include 'include/site-search.twig' %}
+
+
+
+
+

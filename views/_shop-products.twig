@@ -1,0 +1,15 @@
+<div class="shop-products">
+  {% for p in products %}
+    {{ fn("timber_set_product", p) }}
+    <div class="product-tease">
+      <a href="{{ p.link }}"> 
+        <figure>
+          {% do action( 'woocommerce_before_shop_loop_item_title' ) %}
+        </figure>
+        <h3> {{ p.title }} </h3>
+      </a>  
+      {% do action("woocommerce_after_shop_loop_item_title") %}
+      {% do action("woocommerce_after_shop_loop_item") %}
+    </div>
+  {% endfor %}
+  </div>

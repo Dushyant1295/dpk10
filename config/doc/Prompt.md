@@ -1,0 +1,1 @@
+Analyze this workspace and create a minimal Timber cache system for faster page builds. Use StarterSite-cache.php as a reference and update startersite.php accordingly. Do not add unnecessary code — keep the caching system simple and efficient.

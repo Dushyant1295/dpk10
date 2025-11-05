@@ -1,0 +1,29 @@
+{% block html_head_container %}
+	{% include 'include/html-header.twig' %}
+	</head>
+{% endblock %}
+	<body class="{{body_class}}" data-barba="wrapper" data-template="base.twig">
+		{% if options.body_start_scripts %} {{ options.body_start_scripts }} {% endif %}
+
+		{% block header %}
+			{% include 'include/header.twig' %}
+			{% include 'include/mob-header.twig' %}
+		{% endblock %}
+	 
+		<main data-barba="container" data-barba-namespace="{{post.slug}}">
+			<div data-scroll-container class="{{post.slug}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+		</main>
+		
+		{% block footer %}				
+			{{ function('wp_footer') }}
+		{% endblock %}
+
+		{{ function('stop_timber_timer') }}      
+
+		{% if options.body_end_scripts %} {{options.body_end_scripts}} {% endif %}
+	</body>
+</html>

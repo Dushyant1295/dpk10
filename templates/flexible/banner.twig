@@ -1,0 +1,21 @@
+{% set banner = content.banner_type_1 %}
+{% set mobileImage = get_image(banner.mobile_image) %}
+{% set desktopImage = get_image(banner.desktop_image) %}
+{% set bannerImage = fn('wp_is_mobile') and mobileImage.guid ? mobileImage.guid : desktopImage.guid %}
+
+<section class="inner-banner" style="background-image: url('{{ bannerImage }}');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                {% if banner.content %}
+                {{ banner.content }}
+                {% endif %}
+                {% if banner.cta.title %}
+                <a class="btn mt-4" href="{{ banner.cta.url }}" target="{{ banner.cta.target ? '_blank' : '_self' }}">
+                    {{ banner.cta.title }}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

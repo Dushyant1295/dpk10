@@ -1,0 +1,57 @@
+{# Inline Background Image #}
+
+<section class="banner bg-blue" style="background-image: url('{{ theme.link ~ '/src/img/water.jpg' }}');"></section>
+ 
+
+{# Inline Background Image #}
+
+<a class="fancy-video" href="https://youtu.be/udAJenoCThQ" data-fancybox>
+    
+    <img src="{{ theme.link ~ '/src/img/banner-vid.jpg'}}"   />
+
+    <span class="play-btn">
+        <svg>
+            <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#play'}}" />
+        </svg>
+    </span>
+</a>
+
+<script>
+   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Manual updation of tracking code
+            setTimeout(() => {
+            if (gtag) {  
+                barba.hooks.after(() => {
+                gtag("event", "page_view", {
+                    page_title: document.title,
+                    page_location: location.href,
+                    page_path: location.pathname,
+                });
+                });
+            }
+            }, 500);
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+ </script>
+
+
+
+<link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Video Box
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+<a class="{% if video_link %}vid-banner {% else %}pe-none{% endif %}" href="{{ video_link }}" data-fancybox>                               
+    {% if poster_img %}
+        <img src="{{ poster_img }}" alt="{{ poster_img.alt }}" />
+    {% endif %} 
+
+    {% if video_link %}
+        <span class="play-btn">
+            <svg>
+                <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#play'}}" />
+            </svg>
+        </span>
+    {% endif %}
+</a>

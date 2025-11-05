@@ -1,0 +1,27 @@
+image: node:24.3.0
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build & Deploy Package to Staging
+          deployment: staging
+          caches:
+            - node
+            - composer
+          script:
+            - npm ci
+            - npm run build
+            - apt-get update && apt-get install -y zip unzip php-cli
+            - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+            - composer require timber/timber:^2.3
+
+            - pipe: atlassian/rsync-deploy:0.7.1
+              variables:
+               USER: 'u2605-v7vkpzw9jbnb'
+               SERVER: 'taef.crowddubai.com'
+               REMOTE_PATH: '/home/customer/www/taef.crowddubai.com/public_html/wp-content/themes/taef'
+               LOCAL_PATH: '${BITBUCKET_CLONE_DIR}/'
+               DEBUG: 'false'
+               EXTRA_ARGS: '--delete --exclude=node_modules --exclude=.git -clvrz'
+               SSH_PORT: '18765'

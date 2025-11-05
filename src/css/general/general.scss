@@ -1,0 +1,65 @@
+@use "../media" as *;
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Html Main           
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+html {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+  font-size: 100%;
+
+  @include media("<=tablet") {
+    scroll-behavior: smooth;
+  }
+
+  @include media(">tablet") {
+    font-size: calc(100vw / 1440 * 10);
+  }
+
+  @include media(">=phone", "<=tablet") {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @include media("<phone") {
+    font-size: calc(100vw / 430 * 10);
+  }
+
+  // For landscape orientation
+  @media screen and (max-width: 414px) {
+    font-size: calc(100vw / 496 * 10);
+  }
+
+  @media (min-width: 500px) and (max-width: 766px) {
+    font-size: calc(100vw / 992 * 10);
+  }
+
+  @media (orientation: landscape) and (max-height: 450px) {
+    font-size: calc(100vw / 992 * 10);
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   Body          
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  color: var(--purple);
+  font-family: "Poppins", sans-serif;
+  background-color: var(--purple);
+}
+
+
+section {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}

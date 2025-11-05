@@ -1,0 +1,13 @@
+<header class="shop-header">
+    {% if term %}
+      <h1>{{ term.name }}</h1>
+      {{ term.description | wpautop }}
+    {% endif %}
+    {% do action("woocommerce_before_main_content") %}
+  </header>
+  <div class="shop-wrapper">
+    {% do action("woocommerce_before_shop_loop") %}
+    {% include "views/_shop-products.twig" %}
+    {% do action("woocommerce_after_shop_loop") %}
+  </div>
+  {% do action("woocommerce_after_main_content") %}

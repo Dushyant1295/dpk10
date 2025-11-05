@@ -1,0 +1,19 @@
+{
+  "name": "dev/theme",
+  "type": "wordpress-theme",
+  "description": "2025",
+  "require": {
+    "timber/timber": "2.3.2"
+  },
+  "authors": [
+    {
+      "name": "dev",
+      "email": "dushyant@thisiscrowd.com"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}

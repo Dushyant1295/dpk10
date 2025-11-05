@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Mobile Accessibility: Set viewport for proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Demo Page</title>
+    <style>
+        /* Visual Design: High contrast and focus visibility */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        /* Ensure interactive elements have visible focus indicators */
+        a:focus,
+        button:focus,
+        input:focus {
+            outline: 2px solid #005fcc;
+            /* Sufficient contrast color for focus */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Semantic Structure: Header with proper landmark role -->
+    <header role="banner">
+        <h1>Accessible Demo Page</h1>
+        <!-- Navigation: Using semantic nav element with ARIA landmark -->
+        <nav role="navigation">
+            <ul>
+                <li><a href="#main-content">Skip to Content</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content: ARIA landmark for main region -->
+    <main id="main-content" role="main">
+        <!-- Section: Demonstrates semantic structure with proper headings -->
+        <section id="about">
+            <h2>About This Demo</h2>
+            <p>
+                This page demonstrates several basic accessibility features based on
+                WCAG 2.1 guidelines.
+            </p>
+
+            <!-- Text and Media: Image with descriptive alt text -->
+            <figure>
+                <img src="example.jpg"
+                    alt="A demonstration of accessible web design with clear labels and high contrast colors" />
+                <figcaption>Figure 1: Example of accessible design.</figcaption>
+            </figure>
+
+            <!-- Text and Media: Video element with captions and audio description reference -->
+            <video controls width="320" height="240" aria-describedby="video-description">
+                <source src="demo-video.mp4" type="video/mp4" />
+                <!-- Captions: Provide captions for video content -->
+                <track kind="captions" src="captions_en.vtt" srclang="en" label="English" />
+                <!-- Fallback text if video is unsupported -->
+                Your browser does not support the video tag.
+            </video>
+            <!-- Hidden description for assistive technologies (Audio Description) -->
+            <p id="video-description" class="visually-hidden">
+                Video showing step-by-step instructions on implementing accessible
+                features.
+            </p>
+        </section>
+
+        <!-- Form Example: Demonstrates keyboard accessibility, autocomplete, and error handling -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="/submit-form" method="post">
+                <div>
+                    <!-- Semantic Structure: Label associated with input -->
+                    <label for="name">Name:</label>
+                    <!-- Autocomplete: Helps users fill out the form quickly -->
+                    <input type="text" id="name" name="name" autocomplete="name" required />
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required />
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <!-- Error Handling: ARIA live region to announce error messages -->
+            <div role="alert" aria-live="assertive" style="color: red">
+                <!-- This error message can be dynamically updated -->
+                <!-- e.g., "Please fill in all required fields." -->
+            </div>
+        </section>
+
+        <!-- Dynamic Content: Live updates region using ARIA live attributes -->
+        <section>
+            <h2>Live Updates</h2>
+            <div id="live-updates" aria-live="polite">
+                <!-- This content will be announced by screen readers when updated -->
+                No new updates at this time.
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: Includes accessibility statement and print-friendly link -->
+    <footer role="contentinfo">
+        <p>&copy; 2025 Accessible Web Solutions. All rights reserved.</p>
+        <!-- Documentation and Policy: Link to accessibility statement -->
+        <p>
+            <a href="/accessibility-statement.html">Accessibility Statement</a>
+        </p>
+        <!-- Print Accessibility: Link to a printer-friendly version -->
+        <p>
+            <a href="/print-version.html" target="_blank" rel="noopener">Printer Friendly Version</a>
+        </p>
+    </footer>
+
+    <!-- Additional Comments:
+       - Text and Media: All images include alt tags; videos include captions.
+       - Semantic Structure: Proper use of HTML5 elements and ARIA landmarks.
+       - Visual Design: Ensures proper color contrast and focus visibility.
+       - Navigation: Provides keyboard accessible navigation links.
+       - Usability: Form includes autocomplete and error handling with ARIA live regions.
+       - Language and Input: The 'lang' attribute is set on the html tag.
+       - Mobile Accessibility: Uses a responsive meta viewport.
+       - Cognitive Accessibility: Clear language and a logical, simple structure.
+       - Additional Scripting: Dynamic content areas use ARIA live attributes for updates.
+       - Documentation and Policy: Accessibility statement and print-friendly version provided.
+  -->
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<section aria-labelledby="clients-heading">
+    <!-- Added aria-labelledby to describe the section for assistive technologies -->
+    <div class="position-relative o-hide">
+
+        <div class="marquee-container" data-dpk-call>
+            <!-- Added a visually hidden heading to label the section -->
+            <h2 id="clients-heading" class="visually-hidden">Our Clients</h2>
+
+            <div class="inner pb-4 px-10 right">
+                <!-- Added descriptive alt text for each logo -->
+                <img src="{{ theme.link ~ '/src/img/client/alaska.svg'}}" alt="Alaska logo" />
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 
+
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+
+-->

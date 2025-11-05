@@ -1,0 +1,85 @@
+{
+    "key": "group_5aa01dfaafc82",
+    "title": "Analytics\/Tracking",
+    "fields": [
+        {
+            "key": "field_5cfe5de6150d5",
+            "label": "Head Scripts",
+            "name": "head_scripts",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Scripts to include before <\/head>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5cfe5e11150d6",
+            "label": "Body Start Scripts",
+            "name": "body_start_scripts",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Scripts to include at the top of <body>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5cfe5e30150d7",
+            "label": "Body End Scripts",
+            "name": "body_end_scripts",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Scripts to include before <\/body>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-analytics-tracking"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1706795453
+}

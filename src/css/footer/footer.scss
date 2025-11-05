@@ -1,0 +1,50 @@
+footer {
+    background-color: #1f666e;
+    color: white;
+    position: relative;
+
+    .credits {
+        a,
+        span,
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+    .f-menus {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+.footer-bg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+        
+}
+
+
+
+
+.b-top-w {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.socials {
+    svg {
+        fill: white;
+        height: 2rem;
+        width: 2rem;
+    }
+}

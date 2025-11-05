@@ -1,0 +1,34 @@
+{% set hidden = content.hidden %}
+{% if hidden == false %} 
+<section class="st {{content.column_classes}}">
+    <div class="container">
+        <div class="row">
+            {% for rep in content.column_settings %}
+                {% set cont = rep.content %}
+                {% set thumb = get_image(rep.image) %}    
+                {% set link = rep.link %}
+                <div class="{{content.column_size}} pb-6 tiny-editor">
+                            {% if thumb %}
+                            <div class="img-detect mb-4" data-dpk-call>
+                                <img src="{{ thumb }}" alt="{{ thumb.alt }}" />
+                            </div>
+                            {% endif %}  
+
+                            {% if cont %} {{ cont }}  {% endif %}
+                            
+                            {% if link.title %}
+                                <a class="btn mt-4" href="{{ link.url }}" target="{{ link.target ? '_blank' : '_self' }}">
+                                    {{ link.title }}
+                                </a>
+                            {% endif %}
+                </div>
+            {% endfor %}
+        </div> 
+    </div>
+</section>
+{% endif %}
+
+
+
+
+ 

@@ -1,0 +1,157 @@
+
+
+
+
+.pdf-download-cards {
+  a {
+    background-color: #67bdbb33;
+    color: #3e0937;
+    font-weight: 500;
+    border-radius: 1rem;
+
+    img {
+      width: auto;
+      height: 3.5rem;
+    }
+  }
+}
+
+.card-div {
+  color: #3e0937;
+  .chairman-pic {
+    width: auto;
+    height: 35rem;
+  }
+  .position {
+    span {
+      width: 0.5rem;
+      background-color: #1f817f;
+      height: 100%;
+      position: absolute;
+    }
+    p {
+      color: #1f817f;
+      font-weight: 400;
+    }
+  }
+  .mail-div {
+    a {
+      font-weight: 400;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      padding-left: 1rem;
+      font-size: 1.2rem;
+      width: 20%;
+    }
+    span {
+      width: 0.2rem;
+      background-color: #1f817f;
+      height: 20%;
+      position: absolute;
+    }
+  }
+}
+
+.strategy-card-container {
+  p {
+    font-size: 1.5rem;
+  }
+  .strategy-card {
+    background-color: #ffffff1a;
+    p {
+      width: 95%;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.strategy-bg {
+  position: absolute;
+  height: 51rem;
+  width: auto;
+}
+
+.strategy-sec-bg {
+  top: 0;
+  right: -3rem;
+}
+.strategy-sec-bg-left {
+  bottom: 0;
+  left: -3rem;
+}
+
+.position-white {
+  span {
+    width: 0.5rem;
+    background-color: white;
+    height: 50%;
+    position: absolute;
+  }
+  p {
+    color: #1f817f;
+    font-weight: 400;
+  }
+}
+
+.address-div {
+  font-size: 1.5rem;
+  a {
+    margin-top: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    img {
+      width: auto;
+      height: 2.4rem;
+    }
+  }
+  p {
+    padding-left: 2rem;
+    width: 20%;
+  }
+  span {
+    width: 0.2rem;
+    background-color: white;
+    height: 45%;
+    position: absolute;
+    margin-top: -2rem;
+  }
+}
+
+.small-div {
+  h6 {
+    margin-top: 1rem;
+  }
+  padding-right: 5rem;
+  p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.benefit-sec-bg {
+  position: absolute;
+  bottom: -20rem;
+  margin: auto;
+  width: auto;
+  height: 88rem;
+}
+
+.work-life-balance {
+  padding: 2.5rem 0rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.193);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.193);
+}
+
+.star-card {
+  background-color: #d9d9d926;
+  width: 48%;
+  border-radius: 1rem;
+  p {
+    font-size: 1.6rem;
+  }
+}
