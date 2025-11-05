@@ -1,9 +1,0 @@
-desktop.ini
-*.css.map
-css/components/*.css
-*.zip
-.vscode
-ref/
-node_modules/*
-/dist
-dist/
