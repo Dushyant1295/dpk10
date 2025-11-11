@@ -3,10 +3,9 @@
 
 header {
   position: fixed;
-  top: 2.5rem;
+  padding-top: 1rem;
+  top: 0rem;
   z-index: 101;
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.7s ease;
 
   ul li {
     display: inline-block;
@@ -17,7 +16,7 @@ header {
     margin-left: 1.5rem;
     line-height: 1.8rem;
     font-weight: normal;
-    color: white;
+    color: var(--cream);
     font-size: 1.8rem;
 
     &.active:before {
@@ -25,12 +24,18 @@ header {
     }
   }
 
-   
+
+  &.active {
+    // background: linear-gradient(180deg, rgba(62, 9, 55, 0.60) 31.56%, rgba(130, 113, 128, 0.00) 100%);
+    // backdrop-filter: blur(0px);
+  }
+
+
 }
 
 .header-logo {
   img {
-    max-width: 19rem;
+    max-width: 16rem;
   }
 }
 

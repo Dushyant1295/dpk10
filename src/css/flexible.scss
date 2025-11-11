@@ -1,21 +1,5 @@
 @use "./media" as *;
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                   Inner Banner               
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.inner-banner {
-    background-size: cover;
-    background-position: center;
-    color: white;
-    .row {
-        min-height: 50rem;
-        h1,
-        p {
-            max-width: 60rem;
-            padding-bottom: 1rem;
-        }
-    }
-}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                   Single Column              

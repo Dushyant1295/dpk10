@@ -1,37 +1,8 @@
 import "./gsap-effects.scss";
-import Splitting from "splitting";
-
 import gsap from "gsap";
-// import { gsapDebug, gsapDebugSlider } from "./gsapDebug";
 
  
-function appearTitle() {
-  const titles = document.querySelectorAll('[data-dpk-call="appearTitle"]');
-
-  titles.forEach((title) => {
-    const revealText = title.querySelectorAll("h1, h2, h3, h4, h5, h6");
-    const results = Splitting({
-      target: revealText,
-      by: "lines",
-      // whitespace: false
-      // key: null,
-    });
-
-    results.forEach((splitResult) => {
-      const wrappedLines = splitResult.lines
-        .map((wordsArr) => {
-          const wrappedWords = wordsArr
-            .map((word) => `${word.outerHTML}<span> </span>`)
-            .join("");
-          return `<div class="lines"><div class="words">${wrappedWords}</div></div>`;
-        })
-        .join("");
-
-      splitResult.el.innerHTML = wrappedLines;
-    });
-  });
-}
-
+ 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                     Paragraph Reveal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

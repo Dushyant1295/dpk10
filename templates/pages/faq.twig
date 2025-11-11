@@ -1,15 +1,71 @@
 {% extends "base.twig" %}
 {% block content %}
 
-<section class="faq-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>{{ post.title }}</h1>
-                {{ post.content }}
-            </div>
-        </div>
-    </div>
+
+<section class="inner-banner pb-lg-7 bg-purple">
+  <div class="container st">
+    <h1>
+      Your Questions,
+      <strong>Answered</strong>
+    </h1>
+  </div>
 </section>
 
-{% endblock %}
+<section class="sy bg-purple">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <ol class="accordion">
+          {% for i in 1..4 %}
+
+          <li class="{% if loop.index == 1 %}selected{% endif %}">
+            <div class="accordian-title">
+              <h5> What makes Webflow the best choice for my website? </h5>
+              <span class="more"><svg>
+                  <use xlink:href="{{ theme.link ~ '/src/img/icon.svg#carrow'}}" />
+                </svg>
+              </span>
+            </div>
+            <div class="accordion_item">
+              <p>
+                What makes he Arab Energy Fund (“The Arab Energy Fund”, “us”, “we”, or “our”) operates https://taef.com
+                (the
+                “Website”). This Website Privacy Statement page informs you of our policies regarding the collection,
+                use
+                and disclosure of Personal Information we receive from users of the Website as well as policies
+                concerning
+                your use of this Website (“Privacy Statement”). the best choice for my website?
+              </p>
+            </div>
+          </li>
+
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sb">
+  <div class="container">
+    <div class="row g-0 p-10 bg-sky-blue position-relative rounded-1">
+      <div class="col-lg-6 tiny-editor fwp-400 py-lg-6">
+        <h3>Still have questions? get in touch?</h3>
+        <p>
+          We're here to assist you!
+        </p>
+      </div>
+
+      <div class="col-lg-6 my-auto text-end">
+        <a href="#" class="btn cream z-10"> Get in touch </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{% include 'include/footer.twig' %} {% endblock %}

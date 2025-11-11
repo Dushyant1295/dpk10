@@ -14,14 +14,23 @@ h6 {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 7.5rem;
   line-height: 1.1;
+  letter-spacing: -4.8px;
+
+  strong {
+    color: var(--cream);
+  }
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 4.75rem;
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
+
+  strong {
+    color: var(--cream);
+  }
 }
 
 h3 {
@@ -42,6 +51,10 @@ h5 {
 
 h6 {
   font-size: 2rem;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 p,
@@ -70,7 +83,6 @@ span {
   }
 }
 
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                  Tiny Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -90,6 +102,15 @@ span {
   h6,
   p {
     padding-bottom: 1.5rem;
+  }
+
+  p a {
+    color: var(--orange);
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-bottom: 1px solid var(--orange);
+    }
   }
 
   p:last-child {

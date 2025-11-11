@@ -1,15 +1,11 @@
 {% extends "base.twig" %}
 {% block content %}
-<div class="vh-25"></div>
-
-
-  {# % include 'pages/home/highlight-ir.twig' % #}
-  {% include 'pages/home/highlight-section.twig' %}
-  {% include 'pages/home/partner-section.twig' %}
-  {% include 'pages/home/case-study-section.twig' %}
-  {% include 'pages/home/hightlight-impact.twig' %}
-  {% include 'pages/home/latest-press-release.twig' %}
-  {% include 'pages/home/life-section.twig' %}
-  {% include 'include/footer.twig' %} 
-
+    {% include 'pages/home/home-banner.twig' %}    
+    {% include 'pages/home/highlight-section.twig' %}
+    {% include 'pages/home/partner-section.twig' %}
+    {% include 'pages/home/case-study-section.twig' %}
+    {% include 'pages/home/hightlight-impact.twig' %}
+    {% include 'pages/home/latest-press-release.twig' %}
+    {% include 'pages/home/life-section.twig' %}
+    {% include 'include/footer.twig' %}
 {% endblock %}

@@ -1,65 +1,98 @@
+.inner-banner {
+  background-color: var(--teal);
+  padding-top: 13rem;
+  min-height: 70vh;
 
+  img.mask {
+    height: 53rem;
+  }
 
+  color: white;
 
+  p,
+  h1 strong {
+    display: block;
+    padding-left: 10rem;
+  }
 
-.pdf-download-cards {
-  a {
-    background-color: #67bdbb33;
-    color: #3e0937;
-    font-weight: 500;
-    border-radius: 1rem;
+  p {
+    max-width: 90%;
 
-    img {
-      width: auto;
-      height: 3.5rem;
-    }
+  }
+
+  .img-focus {
+    top: 75%;
+    left: 50%;
+  }
+
+  &.bg-purple {
+    background-color: var(--purple);
+  }
+
+  &.bg-green {
+    background-color: var(--green);
   }
 }
 
-.card-div {
-  color: #3e0937;
-  .chairman-pic {
-    width: auto;
-    height: 35rem;
-  }
-  .position {
-    span {
-      width: 0.5rem;
-      background-color: #1f817f;
-      height: 100%;
-      position: absolute;
-    }
-    p {
-      color: #1f817f;
-      font-weight: 400;
-    }
-  }
-  .mail-div {
-    a {
-      font-weight: 400;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      padding-left: 1rem;
-      font-size: 1.2rem;
-      width: 20%;
-    }
-    span {
-      width: 0.2rem;
-      background-color: #1f817f;
-      height: 20%;
-      position: absolute;
-    }
+
+
+
+
+
+.mask {
+  mask: url("data:image/svg+xml,<svg width='1754' height='1687' viewBox='0 0 1754 1687' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_1432_2646)'><path d='M1745.5 1673.5L1745.5 328L1380.73 251.63L324.813 82.2212C150.591 54.2693 11.4172 225.394 74.3007 390.245L455.421 1389.36L573 1673.5L1745.5 1673.5Z' fill='black'/></g><defs><clipPath id='clip0_1432_2646'><rect width='1753.42' height='1687' fill='white'/></clipPath></defs></svg>") no-repeat;
+  mask-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+.mask-left {
+  mask: url("data:image/svg+xml,<svg width='1689' height='1755' viewBox='0 0 1689 1755' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_1434_2655)'><path d='M-9.55441 1763.06L1335.95 1762.18L1412.08 1397.36L1580.8 341.333C1608.64 167.092 1437.42 28.0305 1272.61 91.0214L273.74 472.793L-10.3187 590.557L-9.55441 1763.06Z' fill='black'/></g><defs><clipPath id='clip0_1434_2655'><rect width='1753.42' height='1687' fill='white' transform='translate(1687) rotate(89.9626)'/></clipPath></defs></svg>") no-repeat;
+  mask-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.img-focus {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+
+  &.left {
+    top: 0%;
+    left: 7%;
+    transform: rotate(-190deg);
+
   }
 }
+
+
 
 .strategy-card-container {
   p {
     font-size: 1.5rem;
   }
+
   .strategy-card {
     background-color: #ffffff1a;
+
     p {
       width: 95%;
       font-size: 1.5rem;
@@ -77,6 +110,7 @@
   top: 0;
   right: -3rem;
 }
+
 .strategy-sec-bg-left {
   bottom: 0;
   left: -3rem;
@@ -89,6 +123,7 @@
     height: 50%;
     position: absolute;
   }
+
   p {
     color: #1f817f;
     font-weight: 400;
@@ -97,19 +132,23 @@
 
 .address-div {
   font-size: 1.5rem;
+
   a {
     margin-top: 2rem;
     padding-left: 2rem;
     margin-bottom: 1rem;
+
     img {
       width: auto;
       height: 2.4rem;
     }
   }
+
   p {
     padding-left: 2rem;
     width: 20%;
   }
+
   span {
     width: 0.2rem;
     background-color: white;
@@ -123,7 +162,9 @@
   h6 {
     margin-top: 1rem;
   }
+
   padding-right: 5rem;
+
   p {
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -151,7 +192,52 @@
   background-color: #d9d9d926;
   width: 48%;
   border-radius: 1rem;
+
   p {
     font-size: 1.6rem;
   }
+}
+
+
+
+
+
+
+
+.history-section {
+
+  overflow: visible;
+
+  img {
+    max-width: 25rem;
+    border-radius: 1rem;
+  }
+}
+
+
+
+
+// History images positioning
+.history-img-top-left {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+}
+
+.history-img-top-right {
+  position: absolute;
+  top: -17%;
+  right: 10%;
+}
+
+.history-img-bottom-left {
+  position: absolute;
+  bottom: 15%;
+  left: 7%;
+}
+
+.history-img-bottom-right {
+  position: absolute;
+  bottom: 20%;
+  right: 8%;
 }

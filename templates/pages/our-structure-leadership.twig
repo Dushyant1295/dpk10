@@ -1,15 +1,76 @@
-{% extends "base.twig" %}
-{% block content %}
+{% extends "base.twig" %} {% block content %}
 
-<section class="our-structure-leadership-page">
-    <div class="container">
+<section class="inner-banner bg-purple">
+    <div class="container pe-0">
         <div class="row">
-            <div class="col-12">
-                <h1>{{ post.title }}</h1>
-                {{ post.content }}
+            <div class="col-lg-7 sb my-auto tiny-editor">
+                <h1>
+                    Our Structure &
+                    <strong>Leadership</strong>
+                </h1>
+            </div>
+            <div class="col-lg-5 position-relative">
+                <img class="img-focus" src="{{ theme.link ~ '/src/img/focus.svg'}}" alt="" />
+                <img class="mask" src="{{ theme.link ~ '/src/img/ab.jpg'}}" alt="" />
             </div>
         </div>
     </div>
 </section>
 
-{% endblock %}
+<section class="bg-white sy">
+    <div class="container tab-slider">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 tab-menu">
+                <h6 class="tab-btn px-5 active" data-index="0">Members of the Board</h6>
+                <h6 class="tab-btn px-5" data-index="1">The Executive Management</h6>
+            </div>
+            <div class="col-lg-9 pt-5">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Members of the Board -->
+                        <div class="swiper-slide">
+                            <div class="row g-5">
+                                {% for i in 1..12 %}
+                                <div class="col-lg-4">
+                                    <div class="people">
+                                        <img class="pb-4" src="{{ theme.link ~ '/src/img/about/chairman.png'}}"
+                                            alt="" />
+
+                                        <h5>Mohammed Abdulrahman Albrahim</h5>
+                                        <p class="desig">Chairman of the Board</p>
+                                        <p class="department">Assistant Minister for Oil and Gas, Ministry of Energy</p>
+                                        <p class="country">Kingdom of Saudi Arabia</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
+
+                        <!-- The Executive Management -->
+                          <div class="swiper-slide">
+                            <div class="row g-5">
+                                {% for i in 1..12 %}
+                                <div class="col-lg-4">
+                                    <div class="people">
+                                        <img class="pb-4" src="{{ theme.link ~ '/src/img/about/chairman.png'}}"
+                                            alt="" />
+
+                                        <h5>Mohammed Abdulrahman Albrahim</h5>
+                                        <p class="desig">Chairman of the Board</p>
+                                        <p class="department">Assistant Minister for Oil and Gas, Ministry of Energy</p>
+                                        <p class="country">Kingdom of Saudi Arabia</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'include/footer.twig' %} {% endblock %}

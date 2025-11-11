@@ -1,3 +1,40 @@
 @use "./media" as *;
 
 // Our Structure & Leadership page specific styles
+
+.people {
+    h5{
+        padding-bottom: .75rem;
+        line-height: 1.15;
+    }
+    .country,
+    .department,
+    .desig {
+        font-size: 1.5rem;
+        letter-spacing: -0.36px;
+        padding-top: 0.5rem;
+    }
+
+    .country {
+        color: var(--teal);
+    }
+
+    .department {
+        color: var(--orange);
+    }
+}
+
+
+
+
+.download-cards {
+  a {
+    background-color: #67bdbb33;    
+    font-weight: 500;
+    border-radius: 1rem;
+    img {
+      width: auto;
+      height: 3.5rem;
+    }
+  }
+}

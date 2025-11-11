@@ -1,3 +1,128 @@
 @use "./media" as *;
 
-// Partners page specific styles
+.canvas-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; // White background
+    
+    canvas, .wavy-fallback {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    // Fallback gradient for browsers without WebGL support
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, 
+            rgba(178, 178, 116, 0.3) 0%, 
+            rgba(178, 178, 116, 0.2) 25%, 
+            rgba(178, 178, 116, 0.4) 50%, 
+            rgba(178, 178, 116, 0.15) 75%, 
+            transparent 100%);
+        z-index: 0;
+        animation: subtleFloat 15s ease-in-out infinite;
+    }
+
+    // Hide the fallback when WebGL canvas is present
+    &:has(canvas) {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+@keyframes subtleFloat {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translateY(-10px) scale(1.02); 
+        opacity: 0.6;
+    }
+}
+
+.partner-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .filter-btn {
+        background: transparent;
+        border: 1px solid var(--purple);
+        color: var(--purple);
+        padding: 1rem 2rem;
+        border-radius: 5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active,
+        &:hover {
+            background: var(--purple);
+            border-color: var(--purple);
+            color: white;
+        }
+    }
+}
+
+.partner-card {
+    border: 1px solid #b5b5b5;
+    border-radius: 1.5rem;
+    padding: 4rem;
+    min-height: 23rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        
+    
+    transition: all 0.3s ease;
+
+    img {
+        max-width: 12rem;
+    }
+    &:hover {
+        border-color: #5a2d7b;
+        box-shadow: 0 8px 25px rgba(90, 45, 123, 0.15);
+        transform: translateY(-3px);
+    }
+}
+
+
+
+
+
+
+
+
+.cta-card {
+  
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+    color: white;
+  img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 60rem;
+    
+    pointer-events: none;
+  }
+}

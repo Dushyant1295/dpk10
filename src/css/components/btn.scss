@@ -3,7 +3,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 $size: 6rem;
-$bg: var(--orange);
+$bg: transparent;
 
 .play-btn {
     position: absolute;
@@ -20,18 +20,23 @@ $bg: var(--orange);
     width: $size;
 
     svg {
-        height: 1.75rem;
-        width: 1.75rem;
+        height: 2.75rem;
+        width: 2.75rem;
         fill: white;
+        transition: transform 0.2s ease;
     }
+
 }
 
-.vid-banner {
+
+
+.vid-banner,
+.veno-box {
     position: relative;
     cursor: pointer;
 
     &:hover .play-btn {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 }
 
@@ -61,9 +66,10 @@ $bg: var(--orange);
     transition: all 0.2s ease;
 
     &.cream {
-        background-color: var(--cream);
         border: 1px solid var(--cream);
+
         &:hover {
+            background-color: var(--purple);
             color: var(--cream) !important;
         }
     }
@@ -71,6 +77,7 @@ $bg: var(--orange);
     &.orange {
         background-color: var(--orange);
         border: 1px solid var(--orange);
+
         &:hover {
             color: var(--orange) !important;
         }

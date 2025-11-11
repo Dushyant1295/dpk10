@@ -6,12 +6,15 @@
 
 :root {
   --purple: #3e0937;
+  --cream: #e6cfa1;
+  --teal: #22676F;
   --blue: #67bdbb;
+
+
   --sky-blue: #8bbabb;
   --green: #525e26;
-  --orange: #c75110;
+  --orange: #c75110; 
 
-  --cream: #e6cfa1;
 
   --grid-padding: 5.5vw;
   --section-padding: 8.5rem;
@@ -52,5 +55,12 @@
 
 .bg-purple {
   background-color: var(--purple);
+  color: white;
+}
+
+
+
+.bg-green {
+  background-color: var(--green);
   color: white;
 }

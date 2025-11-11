@@ -5,7 +5,7 @@ import { createLazyLoad, destroyLazyLoad } from "./animations/lazyLoad";
 import { siteSearch } from "./site-search/site-search";
 import { accordianView } from './components/accordian';
 import { simpleParalax, cardOverlap} from './animations/scrollTriggerAni.js'
- 
+import { initWavyCanvas, destroyWavyCanvas } from './animations/wavyCanvas.js';
 
 import { venoboxInit } from "./siteFun";
 
@@ -21,6 +21,7 @@ function init() {
     menuAccordian();
     accordianView();
     venoboxInit();
+    initWavyCanvas();
     // simpleParalax();
     // cardOverlap();
 }
@@ -32,6 +33,7 @@ function initBeforeEnter() {
 
 function destroyBeforeLeave() {
     destroyLazyLoad();
+    destroyWavyCanvas();
 }
 
 export { init, initBeforeEnter, destroyBeforeLeave };
