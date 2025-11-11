@@ -19,12 +19,8 @@
 
   .map-label {
     position: absolute;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     gap: 0.5rem;
     color:#3E0937; // Bootstrap text color
-    font-weight: 500;
     transform: translate(-50%, -50%); // center around coordinates
 
     .dot {
