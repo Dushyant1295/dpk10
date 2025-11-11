@@ -1,16 +1,44 @@
 {% extends "base.twig" %}
 {% block content %}
-  <section class="bg-white sy">
+<section class="bg-white sy">
   <div class="container">
-  <h6>
-    ikgjniofnfpi
-  </h6>  
-  <div  class="img-box">
-          <img src="{{ theme.link ~ '/src/img/about/map.jpg'}}" alt="" />
+    <div class="img-box position-relative">
+      <img src="{{ theme.link ~ '/src/img/about/map.jpg' }}" alt="World Map" />
 
+      <!-- Each .map-label is one dot + text -->
+      <div class="map-label" style="top: 40%; left: 25%;">
+        <span class="dot"></span>
+        <span class="label-text">North America</span>
+      </div>
+
+      <div class="map-label " style="top: 70%; left: 35%;">
+        <span class="dot"></span>
+        <span class="label-text">Latin America & Caribbean</span>
+      </div>
+
+      <div class="map-label" style="top: 55%; left: 48%;">
+        <span class="dot"></span>
+        <span class="label-text">Sub-Suharan Africa</span>
+      </div>
+        <!-- New labels -->
+  <div class="map-label" style="top: 25%; left: 60%;">
+    <span class="dot"></span>
+    <span class="label-text">Europe & Central Asia</span>
   </div>
+
+  <div class="map-label" style="top: 45%; left: 62%;">
+    <span class="dot"></span>
+    <span class="label-text">Middle East & North Africa</span>
+  </div>
+
+  <div class="map-label" style="top: 40%; left: 80%;">
+    <span class="dot"></span>
+    <span class="label-text">East Asia & Pacific</span>
+  </div>
+    </div>
   </div>
 </section>
+
 
 <section class="compliance-aml-page">
     <div class="container">
