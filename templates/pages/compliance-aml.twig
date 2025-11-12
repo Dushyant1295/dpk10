@@ -2,16 +2,17 @@
 {% block content %}
 <section class="bg-white sy">
   <div class="container d-flex align-items-center gap-3">
-    <!-- Left Box -->
-    <div id="info-box" class="d-flex flex-column align-items-center text-center">
-      <h2 class="mb-4" id="region-title">North America</h2>
-      <p class="text-start w-75" id="region-details">
+
+    <!-- Left Info Box -->
+    <div id="left-info-box" class="d-flex flex-column align-items-center text-center">
+      <h2 class="mb-4" id="left-region-title">North America</h2>
+      <p class="text-start w-75" id="left-region-details">
         United States of America<br />
         Canada
       </p>
     </div>
 
-    <!-- Right Box -->
+    <!-- Map Box -->
     <div class="img-box position-relative">
       <img src="{{ theme.link ~ '/src/img/about/map.jpg' }}" alt="World Map" />
 
@@ -64,51 +65,62 @@
         <span class="label-text">East Asia & Pacific</span>
       </div>
     </div>
-     <!-- right Box -->
-    <div id="info-box" class="d-flex flex-column align-items-center text-center">
-      <h2 class="mb-4" id="region-title">North America</h2>
-      <p class="text-start w-75" id="region-details">
-        United States of America<br />
-        Canada
+
+    <!-- Right Info Box -->
+    <div id="right-info-box" class="d-flex flex-column align-items-center text-center">
+      <h2 class="mb-4" id="right-region-title">Europe & Central Asia</h2>
+      <p class="text-start w-75" id="right-region-details">
+        United Kingdom<br>Germany<br>Russia
       </p>
     </div>
+
   </div>
 </section>
 
 <script>
-  // Get all map labels and info box elements
   const mapLabels = document.querySelectorAll(".map-label");
-  const titleEl = document.getElementById("region-title");
-  const detailsEl = document.getElementById("region-details");
 
-  // Function to update info box
-  function updateInfo(region, details) {
-    titleEl.textContent = region;
-    detailsEl.innerHTML = details;
+  const leftTitle = document.getElementById("left-region-title");
+  const leftDetails = document.getElementById("left-region-details");
+  const rightTitle = document.getElementById("right-region-title");
+  const rightDetails = document.getElementById("right-region-details");
+
+  function updateInfoBox(side, region, details) {
+    if (side === "left") {
+      leftTitle.textContent = region;
+      leftDetails.innerHTML = details;
+    } else if (side === "right") {
+      rightTitle.textContent = region;
+      rightDetails.innerHTML = details;
+    }
   }
 
-  // Add click listeners
   mapLabels.forEach(label => {
     label.addEventListener("click", () => {
       const region = label.dataset.region;
       const details = label.dataset.details;
-      updateInfo(region, details);
 
-      // Optional: highlight selected label
+      // Check if label uses flex-column
+      const isColumn = label.classList.contains("flex-column");
+      const side = isColumn ? "left" : "right";
+
+      updateInfoBox(side, region, details);
+
+      // Optional: highlight selected
       mapLabels.forEach(l => l.classList.remove("active"));
       label.classList.add("active");
     });
   });
 
-  // Set default region (North America)
+  // Set default left & right
   window.addEventListener("DOMContentLoaded", () => {
-    const defaultLabel = document.querySelector('.map-label[data-region="North America"]');
-    if (defaultLabel) {
-      defaultLabel.classList.add("active");
-      updateInfo(defaultLabel.dataset.region, defaultLabel.dataset.details);
-    }
+    const leftDefault = document.querySelector('.map-label.flex-column');
+    const rightDefault = document.querySelector('.map-label.d-flex:not(.flex-column)');
+    if (leftDefault) updateInfoBox("left", leftDefault.dataset.region, leftDefault.dataset.details);
+    if (rightDefault) updateInfoBox("right", rightDefault.dataset.region, rightDefault.dataset.details);
   });
 </script>
+
 
 
 
