@@ -1,3 +1,6 @@
 @use "./media" as *;
 
 // FAQ page specific styles
+.faq-card p {
+  padding-right: 2rem;
+}
