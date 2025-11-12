@@ -2,52 +2,106 @@
 {% block content %}
 <section class="bg-white sy">
   <div class="container d-flex align-items-center gap-3">
-    <!-- left box -->
-     <div class="d-flex flex-column align-items-center">
-      <h2 class="mb-4">North America</h2>
-      <p class="text-start w-75">
-     United States of America
-Canada
+    <!-- Left Box -->
+    <div id="info-box" class="d-flex flex-column align-items-center text-center">
+      <h2 class="mb-4" id="region-title">North America</h2>
+      <p class="text-start w-75" id="region-details">
+        United States of America<br />
+        Canada
       </p>
+    </div>
 
-     </div>
-    <!-- right box -->
+    <!-- Right Box -->
     <div class="img-box position-relative">
       <img src="{{ theme.link ~ '/src/img/about/map.jpg' }}" alt="World Map" />
 
-      <!-- Each .map-label is one dot + text -->
-      <div class="map-label d-flex flex-column align-items-center " style="top: 40%; left: 25%;">
+      <!-- Map Labels -->
+      <div class="map-label d-flex flex-column align-items-center" 
+           data-region="North America"
+           data-details="United States of America<br>Canada"
+           style="top: 40%; left: 25%;">
         <span class="dot"></span>
         <span class="label-text">North America</span>
       </div>
 
-      <div class="map-label d-flex flex-column align-items-center  " style="top: 70%; left: 35%;">
+      <div class="map-label d-flex flex-column align-items-center" 
+           data-region="Latin America & Caribbean"
+           data-details="Mexico<br>Brazil<br>Argentina"
+           style="top: 70%; left: 35%;">
         <span class="dot"></span>
         <span class="label-text">Latin America & Caribbean</span>
       </div>
 
-      <div class="map-label d-flex flex-column align-items-center " style="top: 55%; left: 48%;">
+      <div class="map-label d-flex flex-column align-items-center" 
+           data-region="Sub-Saharan Africa"
+           data-details="Nigeria<br>Kenya<br>South Africa"
+           style="top: 55%; left: 48%;">
         <span class="dot"></span>
-        <span class="label-text">Sub-Suharan Africa</span>
+        <span class="label-text">Sub-Saharan Africa</span>
       </div>
-        <!-- New labels -->
-  <div class="map-label d-flex align-items-center" style="top: 25%; left: 60%;">
-    <span class="dot"></span>
-    <span class="label-text">Europe & Central Asia</span>
-  </div>
 
-  <div class="map-label d-flex flex-column align-items-center  " style="top: 45%; left: 62%;">
-    <span class="dot"></span>
-    <span class="label-text">Middle East & North Africa</span>
-  </div>
+      <div class="map-label d-flex align-items-center" 
+           data-region="Europe & Central Asia"
+           data-details="United Kingdom<br>Germany<br>Russia"
+           style="top: 25%; left: 60%;">
+        <span class="dot"></span>
+        <span class="label-text">Europe & Central Asia</span>
+      </div>
 
-  <div class="map-label d-flex align-items-center" style="top: 40%; left: 80%;">
-    <span class="dot"></span>
-    <span class="label-text">East Asia & Pacific</span>
-  </div>
+      <div class="map-label d-flex flex-column align-items-center" 
+           data-region="Middle East & North Africa"
+           data-details="Egypt<br>Saudi Arabia<br>Morocco"
+           style="top: 45%; left: 62%;">
+        <span class="dot"></span>
+        <span class="label-text">Middle East & North Africa</span>
+      </div>
+
+      <div class="map-label d-flex align-items-center" 
+           data-region="East Asia & Pacific"
+           data-details="China<br>Japan<br>Australia"
+           style="top: 40%; left: 80%;">
+        <span class="dot"></span>
+        <span class="label-text">East Asia & Pacific</span>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Get all map labels and info box elements
+  const mapLabels = document.querySelectorAll(".map-label");
+  const titleEl = document.getElementById("region-title");
+  const detailsEl = document.getElementById("region-details");
+
+  // Function to update info box
+  function updateInfo(region, details) {
+    titleEl.textContent = region;
+    detailsEl.innerHTML = details;
+  }
+
+  // Add click listeners
+  mapLabels.forEach(label => {
+    label.addEventListener("click", () => {
+      const region = label.dataset.region;
+      const details = label.dataset.details;
+      updateInfo(region, details);
+
+      // Optional: highlight selected label
+      mapLabels.forEach(l => l.classList.remove("active"));
+      label.classList.add("active");
+    });
+  });
+
+  // Set default region (North America)
+  window.addEventListener("DOMContentLoaded", () => {
+    const defaultLabel = document.querySelector('.map-label[data-region="North America"]');
+    if (defaultLabel) {
+      defaultLabel.classList.add("active");
+      updateInfo(defaultLabel.dataset.region, defaultLabel.dataset.details);
+    }
+  });
+</script>
+
 
 
 <section class="compliance-aml-page">
