@@ -1,67 +1,39 @@
-{% extends "base.twig" %}
-{% block content %}
+{% extends "base.twig" %} {% block content %}
+
+ 
 <section class="bg-purple sy">
-<div class="container">
-  <div class="row justify-content-center ">
-<div class="col-lg-8 text-center tiny-editor textContent">
-  <h2>
-    Certifications
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center tiny-editor">
+                <h2>Certifications</h2>
+                <p>
+                    Our strategic approach empowers businesses to thrive in a competitive
+                    landscape. We focus on tailored solutions that align with your unique
+                    goals.
+                </p>
+            </div>
+        </div>
 
-  </h2>
-  <p>
-    Our strategic approach empowers businesses to thrive in a competitive landscape. We focus on tailored solutions that align with your unique goals.
-  </p>
-</div>
-  </div>
-  <!-- card container -->
-    <div class="row justify-content-center gap-2 mt-8">
-  <!-- cards -->
-   <div class="row flex-column   gap-2 faq-card" style="max-width: 300px;">
-    <!-- image box -->
-   
-        <img src="{{ theme.link ~ '/src/img/faq/cs1.jpg' }}" alt="certifications"  class="rounded">
-     
-<h5>Certificate Name</h5>
-<p style="opacity: 50%;">
-    Our strategic approach empowers businesses to thrive in a competitive landscape. We focus on tailored solutions that align with your unique goals.
-</p>
+        <div class="row g-5 mt-8 tiny-editor op-p-50">
+            {% for i in 1..4 %}
+            <div class="col-lg-3">
+                <div class="p-1 bg-white rounded-1 mb-4">
+                    <img class="rounded-1" src="{{ theme.link ~ '/src/img/aa.jpg' }}" />
+                </div>
 
-   </div>
-<div class="row flex-column   gap-2 faq-card" style="max-width: 300px;">
-    <!-- image box -->
-   
-        <img src="{{ theme.link ~ '/src/img/faq/cs2.jpg' }}" alt="certifications"  class="rounded">
-     
-<h5>Certificate Name</h5>
-<p style="opacity: 50%;">
-    Our strategic approach empowers businesses to thrive in a competitive landscape. We focus on tailored solutions that align with your unique goals.
-</p>
-
-   </div>
-   <div class="row flex-column   gap-2 faq-card" style="max-width: 300px;">
-    <!-- image box -->
-   
-        <img src="{{ theme.link ~ '/src/img/faq/cs3.jpg' }}" alt="certifications"  class="rounded">
-     
-<h5>Certificate Name</h5>
-<p style="opacity: 50%;">
-    Our strategic approach empowers businesses to thrive in a competitive landscape. We focus on tailored solutions that align with your unique goals.
-</p>
-
-   </div>
-   <div class="row flex-column   gap-2 faq-card" style="max-width: 300px;">
-    <!-- image box -->
-   
-        <img src="{{ theme.link ~ '/src/img/faq/cs4.jpg' }}" alt="certifications"  class="rounded">
-     
-<h5>Certificate Name</h5>
-<p style="opacity: 50%;">
-    Our strategic approach empowers businesses to thrive in a competitive landscape. We focus on tailored solutions that align with your unique goals.
-</p>
-
-   </div>
-   </div>
-</div>
+                <h5>Certificate Name</h5>
+                <p>
+                    Our strategic approach empowers businesses to thrive in a competitive
+                    landscape. We focus on tailored solutions that align with your unique
+                    goals.
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </section>
 
-{% include 'include/footer.twig' %} {% endblock %}
+
+{% include 'include/footer.twig' %}
+
+{% endblock %}
