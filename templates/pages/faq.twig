@@ -79,4 +79,33 @@
   </div>
 </section>
 
+<!-- registration process  -->
+<section class="bg-green sy">
+  <!-- <img src="{{ theme.link ~ '/src/img/faq/shadow.jpg' }}" alt="faq" /> -->
+  <div class="container py-10">
+    <!-- text with button -->
+    <div class="col-lg-12">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Registration Process</h2>
+        <button class="btn btn-dark-green mt-4">Register Now</button>
+      </div>
+    </div>
+
+    <div class="row g-5 tiny-editor justify-content-center mt-5">
+      {% for i in 1..4 %}
+      <div class="col-lg-3">
+        <!-- card -->
+        <div class="row g-5 op-p-50">
+          <h3>01</h3>
+          <p>
+            Our strategic approach empowers businesses to thrive in a
+            competitive landscape. We focus on
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 {% include 'include/footer.twig' %} {% endblock %}
