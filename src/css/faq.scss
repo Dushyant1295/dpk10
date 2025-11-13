@@ -7,5 +7,17 @@
 }
 
 .bg-gradient {
-  background: linear-gradient(209.9deg, #F9F5F6 -11.15%, #843E5A 50.66%, #3E0937 107.68%);
+  background: linear-gradient(
+    209.9deg,
+    #f9f5f6 -11.15%,
+    #843e5a 50.66%,
+    #3e0937 107.68%
+  );
+}
+
+.banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
 }
