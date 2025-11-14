@@ -28,3 +28,25 @@
     margin-bottom: 1rem;
   }
 }
+
+.arrow {
+  h3 {
+    position: relative;
+    display: inline-block;
+    padding-left: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      border: 2px solid red;
+      width: 20px;
+      height: 28px;
+      transform: translateY(-50%);
+      background-image: url("../img/faq/linkarrow.png") !important; // FIXED PATH
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
